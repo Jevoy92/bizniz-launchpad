@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Youtube, Headphones, Music, Instagram, Mail, ArrowRight, Mic, ChevronRight } from "lucide-react";
+import { Youtube, Headphones, Music, Instagram, Mail, ArrowRight, Mic, ChevronRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import logo from "@/assets/logo.png";
 import banner from "@/assets/banner.png";
 
@@ -56,13 +57,15 @@ const PLATFORMS = [
 ];
 
 const Index = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="min-h-screen bg-background text-foreground bg-noise">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <a href="#hero" className="flex items-center gap-3">
-            <img src={logo} alt="Mind Your Bizniz" className="h-8 w-auto invert" />
+            <img src={logo} alt="Mind Your Bizniz" className="h-8 w-auto dark:invert" />
             <span className="font-heading font-bold text-sm tracking-wider hidden sm:inline">MYB PODCAST</span>
           </a>
           <div className="flex items-center gap-6">
@@ -75,6 +78,14 @@ const Index = () => {
                 {item.label}
               </a>
             ))}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle theme"
+            >
+              <Sun className="w-5 h-5 hidden dark:block" />
+              <Moon className="w-5 h-5 block dark:hidden" />
+            </button>
             <a
               href={YOUTUBE_CHANNEL}
               target="_blank"
@@ -95,7 +106,7 @@ const Index = () => {
         </div>
         <div className="container relative z-10 mx-auto px-6 py-24 text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <img src={logo} alt="Mind Your Bizniz Podcast logo" className="h-24 md:h-32 mx-auto mb-8 invert" />
+            <img src={logo} alt="Mind Your Bizniz Podcast logo" className="h-24 md:h-32 mx-auto mb-8 dark:invert" />
           </motion.div>
           <motion.h1
             className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
@@ -354,7 +365,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Mind Your Bizniz" className="h-10 w-auto invert" />
+              <img src={logo} alt="Mind Your Bizniz" className="h-10 w-auto dark:invert" />
               <span className="font-heading font-bold tracking-wider">MIND YOUR BIZNIZ</span>
             </div>
             <div className="flex items-center gap-6">
