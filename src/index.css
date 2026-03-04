@@ -6,85 +6,89 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 4%;
+    --background: 40 20% 96%;
+    --foreground: 30 10% 10%;
 
-    --card: 0 0% 97%;
-    --card-foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 4%;
+    --popover-foreground: 30 10% 10%;
 
-    --primary: 0 0% 4%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 30 10% 10%;
+    --primary-foreground: 40 20% 96%;
 
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 4%;
+    --secondary: 42 40% 88%;
+    --secondary-foreground: 30 10% 10%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 40 15% 92%;
+    --muted-foreground: 30 5% 45%;
 
     --accent: 43 72% 52%;
-    --accent-foreground: 0 0% 4%;
+    --accent-foreground: 30 10% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
     --ring: 43 72% 52%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --sidebar-background: 0 0% 97%;
-    --sidebar-foreground: 0 0% 4%;
-    --sidebar-primary: 0 0% 4%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 94%;
-    --sidebar-accent-foreground: 0 0% 4%;
-    --sidebar-border: 0 0% 88%;
+    --hero-bg: 43 55% 82%;
+
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 30 10% 10%;
+    --sidebar-primary: 30 10% 10%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 42 40% 88%;
+    --sidebar-accent-foreground: 30 10% 10%;
+    --sidebar-border: 40 10% 88%;
     --sidebar-ring: 43 72% 52%;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 96%;
+    --background: 30 10% 6%;
+    --foreground: 40 10% 92%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 96%;
+    --card: 30 8% 10%;
+    --card-foreground: 40 10% 92%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 30 8% 10%;
+    --popover-foreground: 40 10% 92%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 40 10% 92%;
+    --primary-foreground: 30 10% 6%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 30 8% 16%;
+    --secondary-foreground: 40 10% 92%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 30 8% 16%;
+    --muted-foreground: 40 5% 55%;
 
     --accent: 43 72% 52%;
-    --accent-foreground: 0 0% 4%;
+    --accent-foreground: 30 10% 6%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 96%;
+    --destructive-foreground: 40 10% 92%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
+    --border: 30 8% 18%;
+    --input: 30 8% 18%;
     --ring: 43 72% 52%;
 
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 0 0% 96%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 14%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 16%;
+    --hero-bg: 43 30% 18%;
+
+    --sidebar-background: 30 10% 8%;
+    --sidebar-foreground: 40 10% 92%;
+    --sidebar-primary: 40 10% 92%;
+    --sidebar-primary-foreground: 30 10% 6%;
+    --sidebar-accent: 30 8% 16%;
+    --sidebar-accent-foreground: 40 10% 92%;
+    --sidebar-border: 30 8% 18%;
     --sidebar-ring: 43 72% 52%;
   }
 }
@@ -117,7 +121,11 @@
   }
 
   .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  }
+
+  .bg-hero-warm {
+    background-color: hsl(var(--hero-bg));
   }
 }
 
