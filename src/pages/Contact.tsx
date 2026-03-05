@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MapPin, Globe, Instagram, Youtube, Palette, Video, Gift } from "lucide-react";
+import { ArrowUpRight, MapPin, Globe, Instagram, Youtube, Palette, Video, Gift } from "lucide-react";
 import { useEffect } from "react";
 
 const fadeUp = {
@@ -91,15 +91,6 @@ const Contact = () => {
                         </motion.h2>
 
                         <motion.div variants={fadeUp} custom={1} className="space-y-4 mb-10">
-                            <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
-                                    <Mail size={20} style={{ color: "var(--brand-orange)" }} />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Email</p>
-                                    <a href="mailto:hello@mindyourbizniz.co" className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>hello@mindyourbizniz.co</a>
-                                </div>
-                            </div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
                                     <MapPin size={20} style={{ color: "var(--brand-orange)" }} />
