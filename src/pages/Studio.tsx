@@ -141,27 +141,30 @@ const Studio = () => {
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {PACKAGES.map((pkg, i) => (
-                            <motion.div key={i} variants={fadeUp} custom={i} className={`rounded-3xl p-8 transition-transform hover:-translate-y-1 ${pkg.popular ? "ring-2 ring-[var(--brand-orange)]" : ""}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
+                            <motion.div key={i} variants={fadeUp} custom={i} className={`rounded-3xl p-8 flex flex-col transition-transform hover:-translate-y-1 ${pkg.popular ? "ring-2 ring-[var(--brand-orange)]" : ""}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
                                 {pkg.popular && (
                                     <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
                                         ⭐ Most Popular
                                     </span>
                                 )}
+                                {!pkg.popular && <div className="mb-4 h-[26px]" />}
                                 <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>{pkg.name}</h3>
                                 <p className="text-sm mb-6" style={{ color: "var(--brand-text-secondary)" }}>{pkg.desc}</p>
-                                <div className="border-t border-white/10 pt-6 mb-6">
+                                <div className="border-t border-white/10 pt-6 mb-6 flex-1">
                                     <ul className="space-y-3">
                                         {pkg.features.map((f, j) => (
-                                            <li key={j} className="flex items-center gap-3 text-sm text-white/80">
-                                                <Check size={16} style={{ color: "var(--brand-orange)" }} /> {f}
+                                            <li key={j} className="flex items-start gap-3 text-sm text-white/80">
+                                                <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: "var(--brand-orange)" }} /> {f}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-                                <p className="text-3xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-heading)" }}>{pkg.price}<span className="text-base font-normal text-white/50">{pkg.period}</span></p>
-                                <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}>
-                                    Book a Session <span className="brand-icon-circle w-6 h-6"><ArrowUpRight size={14} /></span>
-                                </Link>
+                                <div className="mt-auto">
+                                    <p className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>{pkg.price}<span className="text-base font-normal text-white/50">{pkg.period}</span></p>
+                                    <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}>
+                                        Book a Session <span className="brand-icon-circle w-6 h-6"><ArrowUpRight size={14} /></span>
+                                    </Link>
+                                </div>
                             </motion.div>
                         ))}
                     </motion.div>
