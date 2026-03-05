@@ -193,14 +193,18 @@ const Index = () => {
                   src="/hero-person.png"
                   alt="Podcast listener"
                   className="w-full max-w-md rounded-3xl object-cover"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  animate={!loading ? { y: [0, -6, 0] } : {}}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
                 />
                 {/* Floating player card */}
                 <motion.div
                   initial={{ opacity: 0, y: 30, x: -20 }}
-                  animate={!loading ? { opacity: 1, y: 0, x: 0 } : {}}
-                  transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  animate={!loading ? { opacity: 1, y: [0, -8, 0], x: 0 } : {}}
+                  transition={{ 
+                    opacity: { delay: 1, duration: 0.6 },
+                    x: { delay: 1, duration: 0.6 },
+                    y: { delay: 1.6, duration: 4, repeat: Infinity, ease: "easeInOut" },
+                  }}
                   className="absolute bottom-8 left-0 md:-left-8 rounded-2xl shadow-xl p-3 flex items-center gap-3 min-w-[260px]"
                   style={{ background: "var(--brand-surface-elevated)" }}
                 >
@@ -229,8 +233,13 @@ const Index = () => {
                 {/* Episode count badge */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.6, rotate: -10 }}
-                  animate={!loading ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                  transition={{ delay: 1.2, duration: 0.5, type: "spring", stiffness: 200 }}
+                  animate={!loading ? { opacity: 1, scale: 1, rotate: [0, 2, -2, 0], y: [0, -10, 0] } : {}}
+                  transition={{ 
+                    opacity: { delay: 1.2, duration: 0.5 },
+                    scale: { delay: 1.2, duration: 0.5, type: "spring", stiffness: 200 },
+                    rotate: { delay: 2, duration: 6, repeat: Infinity, ease: "easeInOut" },
+                    y: { delay: 2, duration: 5, repeat: Infinity, ease: "easeInOut" },
+                  }}
                   className="absolute top-8 right-0 md:-right-4 rounded-2xl shadow-xl p-3 flex items-center gap-3"
                   style={{ background: "var(--brand-surface-elevated)" }}
                 >
@@ -251,8 +260,12 @@ const Index = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                   initial={{ opacity: 0, rotate: -90 }}
-                  animate={!loading ? { opacity: 1, rotate: 0 } : {}}
-                  transition={{ delay: 1.5, duration: 0.6 }}
+                  animate={!loading ? { opacity: 1, rotate: [0, 15, -15, 0], y: [0, -6, 0] } : {}}
+                  transition={{ 
+                    opacity: { delay: 1.5, duration: 0.6 },
+                    rotate: { delay: 2, duration: 8, repeat: Infinity, ease: "easeInOut" },
+                    y: { delay: 2, duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+                  }}
                 >
                   <path d="M10 30 Q20 10 30 30" /><path d="M15 28 Q22 12 28 28" />
                 </motion.svg>
