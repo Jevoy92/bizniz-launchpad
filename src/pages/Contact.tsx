@@ -58,6 +58,9 @@ const Contact = () => {
                     <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible" className="mt-4 text-base md:text-lg max-w-2xl" style={{ color: "var(--brand-text-secondary)" }}>
                         Whether you want to be a guest on the show, book a studio session, or just say what&apos;s up — I&apos;d love to hear from you.
                     </motion.p>
+                    <motion.div variants={fadeUp} custom={3} initial="hidden" animate="visible" className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
+                        ✨ 1 Free Guest Spot Every Month — Use the form below to join the waitlist!
+                    </motion.div>
                 </div>
             </section>
 
