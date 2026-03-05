@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Star, Film, Briefcase, Heart, Lightbulb, Target, Compass } from "lucide-react";
+import { ArrowUpRight, Star, Film, Briefcase, Lightbulb, Target, Compass } from "lucide-react";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -16,9 +16,9 @@ const stagger = {
 };
 
 const VENTURES = [
-    { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", icon: Film, img: "/img-production.png" },
-    { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", icon: Lightbulb, img: "/img-workspace.png" },
-    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://besettld.com", icon: Heart, img: "/img-storytelling.png" },
+    { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", logo: "/logo-palmerhouse.png", img: "/img-production.png" },
+    { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", logo: "/logo-yourboyjevoy.svg", img: "/img-workspace.png" },
+    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://besettld.com", logo: "/logo-besettld.svg", img: "/img-storytelling.png" },
 ];
 
 const PHILOSOPHY = [
@@ -123,7 +123,7 @@ const About = () => {
                                 </div>
                                 <div className="p-6">
                                     <div className="flex items-center gap-3 mb-3">
-                                        <v.icon size={20} style={{ color: "var(--brand-orange)" }} />
+                                        <img src={v.logo} alt={v.name + " logo"} className="w-7 h-7 object-contain" style={{ filter: "invert(1)" }} />
                                         <h3 className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>{v.name}</h3>
                                     </div>
                                     <p className="text-sm leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>{v.desc}</p>
