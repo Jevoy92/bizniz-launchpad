@@ -13,7 +13,6 @@ const NAV_LINKS = [
     { label: "About", path: "/about" },
     { label: "Episodes", path: "/episodes" },
     { label: "Studio", path: "/studio" },
-    { label: "Blog", path: "/blog" },
     { label: "Contact", path: "/contact" },
 ];
 
@@ -138,7 +137,7 @@ const Layout = ({ children }: LayoutProps) => {
                             title: "Company", links: [
                                 { label: "About Jevoy", path: "/about" },
                                 { label: "Palmer House Productions", href: "https://www.palmerhouseproductions.com" },
-                                { label: "Blog", path: "/blog" },
+                                
                             ]
                         },
                         {
