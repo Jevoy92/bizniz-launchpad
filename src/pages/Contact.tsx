@@ -90,30 +90,13 @@ const Contact = () => {
                             Other Ways to Connect
                         </motion.h2>
 
-                        <motion.div variants={fadeUp} custom={1} className="space-y-4 mb-10">
-                            <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
-                                    <MapPin size={20} style={{ color: "var(--brand-orange)" }} />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Locations</p>
-                                    <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Bellevue, WA · Renton, WA · Portland, OR</p>
-                                </div>
+                        <motion.div variants={fadeUp} custom={1} className="flex items-center gap-4 mb-10">
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
+                                <MapPin size={20} style={{ color: "var(--brand-orange)" }} />
                             </div>
-                            <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
-                                    <Globe size={20} style={{ color: "var(--brand-orange)" }} />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Websites</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {["jevoypalmer.com", "palmerhouseproductions.com", "yourboyjevoy.com"].map((site) => (
-                                            <a key={site} href={`https://www.${site}`} target="_blank" rel="noopener noreferrer" className="text-xs underline" style={{ color: "var(--brand-orange)" }}>
-                                                {site}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
+                            <div>
+                                <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Locations</p>
+                                <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Bellevue, WA · Renton, WA · Portland, OR</p>
                             </div>
                         </motion.div>
 
