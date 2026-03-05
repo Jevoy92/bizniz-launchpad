@@ -173,7 +173,7 @@ const Layout = ({ children }: LayoutProps) => {
                                 { label: "Palmer House Productions", href: "https://www.palmerhouseproductions.com" },
                                 { label: "YourBoyJevoy", href: "https://www.yourboyjevoy.com" },
                                 { label: "JevoyPalmer.com", href: "https://www.jevoypalmer.com" },
-                                { label: "beSettld", href: "https://www.besetlld.com" },
+                                { label: "beSettld", href: "https://besettld.com" },
                             ]
                         },
                         {
