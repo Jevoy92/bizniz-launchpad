@@ -106,7 +106,7 @@ const Layout = ({ children }: LayoutProps) => {
                         <div className="flex gap-3 mb-4">
                             {[
                                 { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
-                                { icon: "🎬", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/" },
+                                { icon: "🎬", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
                                 { icon: "🎁", href: "https://www.patreon.com/yourboyjevoy" },
                                 { icon: "🌐", href: "https://www.jevoypalmer.com" },
                             ].map((s, i) => (
@@ -149,9 +149,9 @@ const Layout = ({ children }: LayoutProps) => {
                         },
                         {
                             title: "Listen on", links: [
-                                { label: "Spotify", href: "#" },
-                                { label: "Apple Podcasts", href: "#" },
-                                { label: "YouTube", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/" },
+                                { label: "YouTube", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
+                                { label: "Spotify", href: "#", disabled: true },
+                                { label: "Apple Podcasts", href: "#", disabled: true },
                             ]
                         },
                     ].map((col) => (

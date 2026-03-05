@@ -18,7 +18,7 @@ const stagger = {
 
 const SOCIALS = [
     { label: "Instagram", handle: "@yourboyjevoy", href: "https://www.instagram.com/yourboyjevoy/", icon: "📷" },
-    { label: "YouTube", handle: "YourBoyJevoy", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/", icon: "🎬" },
+    { label: "YouTube", handle: "Mind Your Bizniz", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA", icon: "🎬" },
     { label: "Patreon", handle: "yourboyjevoy", href: "https://www.patreon.com/yourboyjevoy", icon: "🎁" },
     { label: "Website", handle: "jevoypalmer.com", href: "https://www.jevoypalmer.com", icon: "🌐" },
     { label: "Palmer House", handle: "palmerhouseproductions.com", href: "https://www.palmerhouseproductions.com", icon: "🎥" },
