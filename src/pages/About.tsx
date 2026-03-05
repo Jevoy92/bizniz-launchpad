@@ -16,9 +16,9 @@ const stagger = {
 };
 
 const VENTURES = [
-    { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", logo: "/logo-palmerhouse.png", img: "/img-production.png" },
-    { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", logo: "/logo-yourboyjevoy.svg", img: "/img-workspace.png" },
-    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://besettld.com", logo: "/logo-besettld.svg", img: "/img-storytelling.png" },
+    { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", logo: "/logo-palmerhouse.png", img: "/logo-palmerhouse.png" },
+    { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", logo: "/logo-yourboyjevoy.svg", img: "/logo-yourboyjevoy.svg" },
+    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://besettld.com", logo: "/logo-besettld.svg", img: "/logo-besettld.svg" },
 ];
 
 const PHILOSOPHY = [
@@ -118,8 +118,8 @@ const About = () => {
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
                         {VENTURES.map((v, i) => (
                             <motion.a key={i} href={v.href} target="_blank" rel="noopener noreferrer" variants={fadeUp} custom={i} className="group rounded-3xl overflow-hidden transition-transform hover:-translate-y-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
-                                <div className="h-48 overflow-hidden">
-                                    <img src={v.img} alt={v.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <div className="h-48 overflow-hidden flex items-center justify-center" style={{ background: "rgba(255,255,255,0.08)" }}>
+                                    <img src={v.img} alt={v.name} className="w-24 h-24 object-contain" />
                                 </div>
                                 <div className="p-6">
                                     <div className="flex items-center gap-3 mb-3">
