@@ -1,35 +1,40 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-
 const WORDS = ["Learn", "Grow", "Capture", "Create", "Inspire"];
 
 const Preloader = ({ onComplete }: { onComplete: () => void }) => {
     const [phase, setPhase] = useState<"loading" | "revealing" | "done">("loading");
     const [progress, setProgress] = useState(0);
     const [wordIdx, setWordIdx] = useState(0);
+    const [ready, setReady] = useState(false);
+
+    // Small delay so all elements mount together before animating
+    useEffect(() => {
+        const t = setTimeout(() => setReady(true), 80);
+        return () => clearTimeout(t);
+    }, []);
 
     useEffect(() => {
-        // Animate progress from 0 to 100
-        const duration = 3500;
+        if (!ready) return;
+        const duration = 3000;
         const start = performance.now();
 
         const tick = (now: number) => {
             const elapsed = now - start;
             const t = Math.min(elapsed / duration, 1);
-            // Ease-out cubic for smooth deceleration
             const eased = 1 - Math.pow(1 - t, 3);
             setProgress(Math.round(eased * 100));
 
             if (t < 1) {
                 requestAnimationFrame(tick);
             } else {
-                setTimeout(() => setPhase("revealing"), 300);
+                setTimeout(() => setPhase("revealing"), 200);
             }
         };
 
         requestAnimationFrame(tick);
-    }, []);
+    }, [ready]);
 
     // Cycle through words
     useEffect(() => {
@@ -69,29 +74,30 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                             background: "radial-gradient(circle, rgba(212,132,90,0.15) 0%, transparent 70%)",
                             filter: "blur(40px)",
                         }}
-                        animate={{
+                        initial={{ opacity: 0, scale: 1 }}
+                        animate={ready ? {
                             scale: [1, 1.3, 1],
                             opacity: [0.4, 0.8, 0.4],
-                        }}
+                        } : {}}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     />
 
                     {/* Logo icon */}
                     <motion.div
                         className="relative z-10 mb-6"
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
+                        initial={{ scale: 0, rotate: -180, opacity: 0 }}
+                        animate={ready ? { scale: 1, rotate: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <motion.div
                             className="relative flex items-center justify-center"
-                            animate={{
+                            animate={ready ? {
                                 filter: [
                                     "drop-shadow(0 0 10px rgba(212,132,90,0.2))",
                                     "drop-shadow(0 0 25px rgba(212,132,90,0.4))",
                                     "drop-shadow(0 0 10px rgba(212,132,90,0.2))",
                                 ],
-                            }}
+                            } : {}}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(212,132,90,0.2) 0%, transparent 70%)", transform: "scale(1.5)" }} />
@@ -103,23 +109,23 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     <motion.div
                         className="relative z-10 overflow-hidden"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        animate={ready ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: 0.4, duration: 0.6 }}
                     >
                         <h1
                             className="text-3xl md:text-4xl font-bold text-white tracking-tight flex gap-3"
                             style={{ fontFamily: "var(--font-heading)" }}
                         >
-                            {"Mind Your Bizniz".split(" ").map((word, wordIdx) => (
-                                <span key={wordIdx} className="inline-block whitespace-nowrap">
+                            {"Mind Your Bizniz".split(" ").map((word, wIdx) => (
+                                <span key={wIdx} className="inline-block whitespace-nowrap">
                                     {word.split("").map((char, i) => (
                                         <motion.span
                                             key={i}
                                             className="inline-block"
                                             initial={{ opacity: 0, y: 30 }}
-                                            animate={{ opacity: 1, y: 0 }}
+                                            animate={ready ? { opacity: 1, y: 0 } : {}}
                                             transition={{
-                                                delay: 0.5 + (wordIdx * 5 + i) * 0.05,
+                                                delay: 0.5 + (wIdx * 5 + i) * 0.05,
                                                 duration: 0.5,
                                                 ease: [0.16, 1, 0.3, 1],
                                             }}
@@ -136,7 +142,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     <motion.div
                         className="relative z-10 mt-10 w-48"
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        animate={ready ? { opacity: 1 } : {}}
                         transition={{ delay: 0.8 }}
                     >
                         <div
@@ -154,7 +160,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                         <motion.div
                             className="mt-4 flex items-center justify-center gap-3 flex-wrap"
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            animate={ready ? { opacity: 1 } : {}}
                             transition={{ delay: 0.6 }}
                         >
                             {WORDS.map((word, i) => (
@@ -180,7 +186,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     <motion.div
                         className="absolute bottom-20 flex items-end gap-1"
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.3 }}
+                        animate={ready ? { opacity: 0.3 } : {}}
                         transition={{ delay: 0.6 }}
                     >
                         {Array.from({ length: 20 }).map((_, i) => (
@@ -188,13 +194,13 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                                 key={i}
                                 className="w-[3px] rounded-full"
                                 style={{ background: "var(--brand-orange)" }}
-                                animate={{
+                                animate={ready ? {
                                     height: [
                                         `${8 + Math.random() * 12}px`,
                                         `${20 + Math.random() * 30}px`,
                                         `${8 + Math.random() * 12}px`,
                                     ],
-                                }}
+                                } : { height: "8px" }}
                                 transition={{
                                     duration: 0.8 + Math.random() * 0.6,
                                     repeat: Infinity,
