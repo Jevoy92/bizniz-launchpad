@@ -153,22 +153,24 @@ const Index = () => {
               </motion.p>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
                 <motion.a
-                  href="#episode"
+                  href="https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="brand-btn-primary"
                   whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(212,132,90,0.4)" }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  Start Listening <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
+                  Watch on YouTube <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                 </motion.a>
                 <motion.a
-                  href="#episode"
+                  href="/studio"
                   className="brand-btn-outline"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  Browse Episodes <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
+                  Book a Session <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                 </motion.a>
               </motion.div>
               <motion.div variants={fadeUp} custom={3} className="mt-8 flex items-center gap-3">
@@ -285,53 +287,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ───── EPISODES ───── */}
-        <section id="episode" className="py-20 md:py-28" style={{ background: "var(--brand-surface)" }}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.h2
-              variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-center brand-section-heading"
-              style={{ color: "var(--brand-text-primary)" }}
-            >
-              Discover the Latest{" "}
-              <span className="brand-underline">Episodes</span>
-              <br className="hidden sm:block" /> and Featured Highlights
-            </motion.h2>
-
-            <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-14 grid sm:grid-cols-2 gap-6">
-              {EPISODES.map((ep, i) => (
-                <motion.div key={i} variants={fadeUp} custom={i} className="brand-card-episode group cursor-pointer">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img src={ep.img} alt={ep.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 text-sm" style={{ color: "var(--brand-text-secondary)" }}>
-                      <Mic size={14} style={{ color: "var(--brand-orange)" }} />
-                      <span>Episode {ep.num}</span>
-                      <span className="font-medium" style={{ color: "var(--brand-text-primary)" }}>{ep.host}</span>
-                    </div>
-                    <h3 className="mt-2 text-xl font-bold" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>{ep.title}</h3>
-                    <p className="mt-1 text-sm" style={{ color: "var(--brand-text-secondary)" }}>{ep.tags}</p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-sm" style={{ color: "var(--brand-text-secondary)" }}>
-                        <Clock size={14} /> {ep.time}
-                      </div>
-                      <div className="brand-icon-circle-outline group-hover:border-[var(--brand-orange)] group-hover:text-[var(--brand-orange)]">
-                        <ArrowRight size={16} />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-12 text-center">
-              <a href="#" className="brand-btn-primary">
-                Browse More Episodes <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
-              </a>
-            </motion.div>
-          </div>
-        </section>
+        {/* Episodes section hidden — waiting for media uploads */}
 
         {/* ───── ABOUT ───── */}
         <section id="aboutus" className="py-20 md:py-28" style={{ background: "var(--brand-surface-alt)" }}>
@@ -454,8 +410,8 @@ const Index = () => {
                   Hello there! Dive into these amazing features designed to elevate your listening experience to new heights!
                 </motion.p>
                 <motion.div variants={fadeUp} custom={2} className="mt-8">
-                  <a href="#episode" className="brand-btn-outline-dark">
-                    Browse Episodes <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
+                  <a href="/studio" className="brand-btn-outline-dark">
+                    Book a Session <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                   </a>
                 </motion.div>
               </motion.div>

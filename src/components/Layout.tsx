@@ -11,7 +11,7 @@ interface LayoutProps {
 const NAV_LINKS = [
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
-    { label: "Episodes", path: "/episodes" },
+    // { label: "Episodes", path: "/episodes" }, // Hidden until media is ready
     { label: "Studio", path: "/studio" },
     { label: "Contact", path: "/contact" },
 ];
@@ -179,7 +179,7 @@ const Layout = ({ children }: LayoutProps) => {
                         {
                             title: "Quick Links", links: [
                                 { label: "Home", path: "/" },
-                                { label: "Episodes", path: "/episodes" },
+                                // { label: "Episodes", path: "/episodes" }, // Hidden until media is ready
                                 { label: "Studio Packages", path: "/studio" },
                             ]
                         },
