@@ -121,7 +121,7 @@ const Layout = ({ children }: LayoutProps) => {
                                 </a>
                             ))}
                         </div>
-                        <p className="text-white/40 text-xs">hello@mindyourbizniz.co</p>
+                        
                         <p className="text-white/40 text-xs">Seattle, Washington</p>
                     </div>
 
