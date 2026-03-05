@@ -84,17 +84,18 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <motion.div
-                            className="w-20 h-20 rounded-2xl flex items-center justify-center bg-white/10"
+                            className="relative flex items-center justify-center"
                             animate={{
-                                boxShadow: [
-                                    "0 0 20px rgba(212,132,90,0.2)",
-                                    "0 0 60px rgba(212,132,90,0.4)",
-                                    "0 0 20px rgba(212,132,90,0.2)",
+                                filter: [
+                                    "drop-shadow(0 0 20px rgba(212,132,90,0.3))",
+                                    "drop-shadow(0 0 50px rgba(212,132,90,0.6))",
+                                    "drop-shadow(0 0 20px rgba(212,132,90,0.3))",
                                 ],
                             }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                         >
-                            <img src="/logo-orange.png" alt="Logo" className="w-14 h-14 object-contain" />
+                            <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(212,132,90,0.25) 0%, transparent 70%)", transform: "scale(2.5)" }} />
+                            <img src="/logo-orange.png" alt="Logo" className="w-24 h-24 object-contain relative z-10" />
                         </motion.div>
                     </motion.div>
 
