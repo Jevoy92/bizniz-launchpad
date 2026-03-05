@@ -18,27 +18,9 @@ const stagger = {
 };
 
 const PACKAGES = [
-    {
-        name: "Space Only",
-        price: "Contact",
-        desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.",
-        features: ["Studio rental access", "Professional equipment", "Raw file delivery", "Flexible scheduling", "Sound-treated room"],
-        popular: false,
-    },
-    {
-        name: "Production Partner",
-        price: "Contact",
-        desc: "We film your session and our team handles editing, sound mixing, and color grading.",
-        features: ["Everything in Space Only", "Professional filming", "Sound mixing & color grading", "2 rounds of revisions", "Delivery within 7 days"],
-        popular: true,
-    },
-    {
-        name: "Full Service",
-        price: "Contact",
-        desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.",
-        features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports", "YouTube optimization", "Unlimited revisions"],
-        popular: false,
-    },
+    { name: "Space Only", price: "Contact", desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.", features: ["Studio rental access", "Professional equipment", "Raw file delivery", "Flexible scheduling", "Sound-treated room"], popular: false },
+    { name: "Production Partner", price: "Contact", desc: "We film your session and our team handles editing, sound mixing, and color grading.", features: ["Everything in Space Only", "Professional filming", "Sound mixing & color grading", "2 rounds of revisions", "Delivery within 7 days"], popular: true },
+    { name: "Full Service", price: "Contact", desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.", features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports", "YouTube optimization", "Unlimited revisions"], popular: false },
 ];
 
 const PROCESS = [
@@ -68,14 +50,10 @@ const Studio = () => {
                         <motion.p variants={fadeUp} custom={0} className="text-sm font-medium mb-4" style={{ color: "var(--brand-orange)" }}>
                             THE STUDIO
                         </motion.p>
-                        <motion.h1
-                            variants={fadeUp} custom={1}
-                            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                            style={{ fontFamily: "var(--font-heading)" }}
-                        >
+                        <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                             Book Your <span className="brand-underline">Session</span>
                         </motion.h1>
-                        <motion.p variants={fadeUp} custom={2} className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>
+                        <motion.p variants={fadeUp} custom={2} className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>
                             Whether you bring your own edit or want the full treatment, we&apos;ve got a studio package that fits your vision. Professional podcasting made simple.
                         </motion.p>
                         <motion.div variants={fadeUp} custom={3} className="mt-8">
@@ -91,31 +69,24 @@ const Studio = () => {
             </section>
 
             {/* ───── PROCESS ───── */}
-            <section className="py-20 md:py-28" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-20 md:py-28" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-4"
-                        style={{ color: "var(--brand-text-dark)" }}
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-4" style={{ color: "var(--brand-text-primary)" }}>
                         How It <span className="brand-underline">Works</span>
                     </motion.h2>
-                    <motion.p
-                        variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-center mb-16 text-base max-w-xl mx-auto" style={{ color: "var(--brand-text-gray)" }}
-                    >
+                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16 text-base max-w-xl mx-auto" style={{ color: "var(--brand-text-secondary)" }}>
                         From booking to delivery, we make the entire process seamless so you can focus on what matters — the conversation.
                     </motion.p>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-4 gap-6">
                         {PROCESS.map((p, i) => (
-                            <motion.div key={i} variants={fadeUp} custom={i} className="text-center p-6 rounded-2xl" style={{ background: "white", border: "1px solid var(--brand-border-light)" }}>
+                            <motion.div key={i} variants={fadeUp} custom={i} className="text-center p-6 rounded-2xl" style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}>
                                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(212,132,90,0.1)" }}>
                                     <p.icon size={24} style={{ color: "var(--brand-orange)" }} />
                                 </div>
                                 <span className="text-xs font-bold tracking-widest mb-2 block" style={{ color: "var(--brand-orange)" }}>STEP {p.step}</span>
-                                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>{p.title}</h3>
-                                <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>{p.desc}</p>
+                                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>{p.title}</h3>
+                                <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>{p.desc}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -125,29 +96,20 @@ const Studio = () => {
             {/* ───── PACKAGES ───── */}
             <section id="packages" className="py-20 md:py-28" style={{ background: "var(--brand-dark)" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-16"
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-16">
                         Studio <span className="brand-underline">Packages</span>
                     </motion.h2>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
                         {PACKAGES.map((pkg, i) => (
-                            <motion.div
-                                key={i}
-                                variants={fadeUp}
-                                custom={i}
-                                className={`rounded-3xl p-8 transition-transform hover:-translate-y-1 ${pkg.popular ? "ring-2 ring-[var(--brand-orange)]" : ""}`}
-                                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}
-                            >
+                            <motion.div key={i} variants={fadeUp} custom={i} className={`rounded-3xl p-8 transition-transform hover:-translate-y-1 ${pkg.popular ? "ring-2 ring-[var(--brand-orange)]" : ""}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
                                 {pkg.popular && (
                                     <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
                                         ⭐ Most Popular
                                     </span>
                                 )}
                                 <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>{pkg.name}</h3>
-                                <p className="text-sm mb-6" style={{ color: "var(--brand-text-gray)" }}>{pkg.desc}</p>
+                                <p className="text-sm mb-6" style={{ color: "var(--brand-text-secondary)" }}>{pkg.desc}</p>
                                 <div className="border-t border-white/10 pt-6 mb-6">
                                     <ul className="space-y-3">
                                         {pkg.features.map((f, j) => (
@@ -158,10 +120,7 @@ const Studio = () => {
                                     </ul>
                                 </div>
                                 <p className="text-3xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-heading)" }}>{pkg.price}</p>
-                                <Link
-                                    to="/contact"
-                                    className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}
-                                >
+                                <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}>
                                     Book a Session <span className="brand-icon-circle w-6 h-6"><ArrowUpRight size={14} /></span>
                                 </Link>
                             </motion.div>
@@ -171,29 +130,19 @@ const Studio = () => {
             </section>
 
             {/* ───── FAQ ───── */}
-            <section className="py-20 md:py-28" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-20 md:py-28" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-3xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-16"
-                        style={{ color: "var(--brand-text-dark)" }}
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-16" style={{ color: "var(--brand-text-primary)" }}>
                         Frequently Asked <span className="brand-underline">Questions</span>
                     </motion.h2>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-4">
                         {FAQS.map((faq, i) => (
-                            <motion.div
-                                key={i}
-                                variants={fadeUp}
-                                custom={i}
-                                className="rounded-2xl overflow-hidden"
-                                style={{ background: "white", border: "1px solid var(--brand-border-light)" }}
-                            >
+                            <motion.div key={i} variants={fadeUp} custom={i} className="rounded-2xl overflow-hidden" style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}>
                                 <button
                                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                                     className="w-full flex items-center justify-between p-5 text-left font-medium"
-                                    style={{ color: "var(--brand-text-dark)" }}
+                                    style={{ color: "var(--brand-text-primary)" }}
                                 >
                                     {faq.q}
                                     <ChevronDown
@@ -207,7 +156,7 @@ const Studio = () => {
                                         initial={{ opacity: 0, height: 0 }}
                                         animate={{ opacity: 1, height: "auto" }}
                                         className="px-5 pb-5 text-sm leading-relaxed"
-                                        style={{ color: "var(--brand-text-gray)" }}
+                                        style={{ color: "var(--brand-text-secondary)" }}
                                     >
                                         {faq.a}
                                     </motion.div>

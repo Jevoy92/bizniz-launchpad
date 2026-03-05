@@ -16,27 +16,9 @@ const stagger = {
 };
 
 const VENTURES = [
-    {
-        name: "Palmer House Productions",
-        desc: "Cinematic video production agency helping founders capture their story and knowledge through video. We design structured content catalogs — training libraries, FAQ systems, authority-building YouTube content — that transform video from a promotional tool into knowledge infrastructure for businesses.",
-        href: "https://www.palmerhouseproductions.com",
-        icon: Film,
-        img: "/img-production.png",
-    },
-    {
-        name: "YourBoyJevoy",
-        desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints. Many ideas originate here before influencing business ventures or larger projects. This space preserves creative freedom.",
-        href: "https://www.yourboyjevoy.com",
-        icon: Lightbulb,
-        img: "/img-workspace.png",
-    },
-    {
-        name: "beSettld",
-        desc: "Lifestyle support for seniors, disabled adults, and busy professionals. The value lies not merely in tasks completed but in emotional relief and stability — exploring how thoughtful systems can improve everyday life for vulnerable populations.",
-        href: "#",
-        icon: Heart,
-        img: "/img-storytelling.png",
-    },
+    { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", icon: Film, img: "/img-production.png" },
+    { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", icon: Lightbulb, img: "/img-workspace.png" },
+    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "#", icon: Heart, img: "/img-storytelling.png" },
 ];
 
 const PHILOSOPHY = [
@@ -67,17 +49,12 @@ const About = () => {
                             <motion.p variants={fadeUp} custom={0} className="text-sm font-medium mb-4" style={{ color: "var(--brand-orange)" }}>
                                 THE STORY BEHIND THE MIC
                             </motion.p>
-                            <motion.h1
-                                variants={fadeUp}
-                                custom={1}
-                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                                style={{ fontFamily: "var(--font-heading)" }}
-                            >
+                            <motion.h1 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                                 Jamaican-Born,{" "}
                                 <span className="brand-underline">Seattle-Based</span>.
                                 <br />Building Something Real.
                             </motion.h1>
-                            <motion.p variants={fadeUp} custom={2} className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>
+                            <motion.p variants={fadeUp} custom={2} className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>
                                 I&apos;m Jevoy Palmer — filmmaker, entrepreneur, and creative strategist. From Kingston to Seattle, I&apos;ve built multiple ventures driven by a single belief: your story is your most valuable business asset.
                             </motion.p>
                             <motion.div variants={fadeUp} custom={2.5} className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
@@ -96,8 +73,8 @@ const About = () => {
                             <div className="rounded-3xl overflow-hidden" style={{ border: "2px solid rgba(212,132,90,0.3)" }}>
                                 <img src="/jevoy-portrait.jpg" alt="Jevoy Palmer" className="w-full h-auto object-cover" />
                             </div>
-                            <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl px-5 py-3">
-                                <p className="text-sm font-bold" style={{ color: "var(--brand-dark)" }}>Filmmaker · Founder · Creator</p>
+                            <div className="absolute -bottom-4 -right-4 rounded-2xl shadow-xl px-5 py-3" style={{ background: "var(--brand-surface-elevated)" }}>
+                                <p className="text-sm font-bold" style={{ color: "var(--brand-text-primary)" }}>Filmmaker · Founder · Creator</p>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -105,35 +82,22 @@ const About = () => {
             </section>
 
             {/* ───── JOURNEY TIMELINE ───── */}
-            <section className="py-20 md:py-28" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-20 md:py-28" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-4xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-16"
-                        style={{ color: "var(--brand-text-dark)" }}
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-16" style={{ color: "var(--brand-text-primary)" }}>
                         The <span className="brand-underline">Journey</span> So Far
                     </motion.h2>
 
                     <div className="relative">
-                        {/* Timeline line */}
                         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px" style={{ background: "var(--brand-orange)", opacity: 0.3 }} />
 
                         {MILESTONES.map((m, i) => (
-                            <motion.div
-                                key={i}
-                                variants={fadeUp}
-                                custom={i}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                className={`relative flex items-start gap-6 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                            >
+                            <motion.div key={i} variants={fadeUp} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} className={`relative flex items-start gap-6 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                                 <div className={`flex-1 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"} pl-16 md:pl-0`}>
                                     <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--brand-orange)" }}>{m.year}</span>
-                                    <p className="mt-2 text-base" style={{ color: "var(--brand-text-gray)" }}>{m.text}</p>
+                                    <p className="mt-2 text-base" style={{ color: "var(--brand-text-secondary)" }}>{m.text}</p>
                                 </div>
-                                <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full border-4 border-white" style={{ background: "var(--brand-orange)", top: "4px" }} />
+                                <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full border-4" style={{ background: "var(--brand-orange)", borderColor: "var(--brand-surface)", top: "4px" }} />
                                 <div className="flex-1 hidden md:block" />
                             </motion.div>
                         ))}
@@ -144,31 +108,16 @@ const About = () => {
             {/* ───── VENTURES ───── */}
             <section className="py-20 md:py-28" style={{ background: "var(--brand-dark)" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-4"
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-4">
                         The <span className="brand-underline">Ventures</span>
                     </motion.h2>
-                    <motion.p
-                        variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-center mb-16 text-base" style={{ color: "var(--brand-text-gray)" }}
-                    >
+                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16 text-base" style={{ color: "var(--brand-text-secondary)" }}>
                         Three businesses, one mission: help people tell their story and build something meaningful.
                     </motion.p>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
                         {VENTURES.map((v, i) => (
-                            <motion.a
-                                key={i}
-                                href={v.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={fadeUp}
-                                custom={i}
-                                className="group rounded-3xl overflow-hidden transition-transform hover:-translate-y-2"
-                                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}
-                            >
+                            <motion.a key={i} href={v.href} target="_blank" rel="noopener noreferrer" variants={fadeUp} custom={i} className="group rounded-3xl overflow-hidden transition-transform hover:-translate-y-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
                                 <div className="h-48 overflow-hidden">
                                     <img src={v.img} alt={v.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                 </div>
@@ -177,7 +126,7 @@ const About = () => {
                                         <v.icon size={20} style={{ color: "var(--brand-orange)" }} />
                                         <h3 className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>{v.name}</h3>
                                     </div>
-                                    <p className="text-sm leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>{v.desc}</p>
+                                    <p className="text-sm leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>{v.desc}</p>
                                     <div className="mt-4 flex items-center gap-2 text-xs font-medium" style={{ color: "var(--brand-orange)" }}>
                                         Learn more <ArrowUpRight size={14} />
                                     </div>
@@ -189,35 +138,22 @@ const About = () => {
             </section>
 
             {/* ───── PHILOSOPHY ───── */}
-            <section className="py-20 md:py-28" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-20 md:py-28" style={{ background: "var(--brand-surface-alt)" }}>
                 <div className="max-w-5xl mx-auto px-6">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-4"
-                        style={{ color: "var(--brand-text-dark)" }}
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-4" style={{ color: "var(--brand-text-primary)" }}>
                         Core <span className="brand-underline">Beliefs</span>
                     </motion.h2>
-                    <motion.p
-                        variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-center mb-16 text-base" style={{ color: "var(--brand-text-gray)" }}
-                    >
+                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16 text-base" style={{ color: "var(--brand-text-secondary)" }}>
                         These ideas form the intellectual spine of everything I build.
                     </motion.p>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-6">
                         {PHILOSOPHY.map((p, i) => (
-                            <motion.div
-                                key={i}
-                                variants={fadeUp}
-                                custom={i}
-                                className="flex items-start gap-4 p-6 rounded-2xl"
-                                style={{ background: "white", border: "1px solid var(--brand-border-light)" }}
-                            >
+                            <motion.div key={i} variants={fadeUp} custom={i} className="flex items-start gap-4 p-6 rounded-2xl" style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}>
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(212,132,90,0.1)" }}>
                                     <p.icon size={20} style={{ color: "var(--brand-orange)" }} />
                                 </div>
-                                <p className="text-base leading-relaxed" style={{ color: "var(--brand-text-dark)" }}>
+                                <p className="text-base leading-relaxed" style={{ color: "var(--brand-text-primary)" }}>
                                     &ldquo;{p.text}&rdquo;
                                 </p>
                             </motion.div>
@@ -229,13 +165,10 @@ const About = () => {
             {/* ───── CTA ───── */}
             <section className="py-20" style={{ background: "var(--brand-dark)" }}>
                 <div className="max-w-3xl mx-auto px-6 text-center">
-                    <motion.h2
-                        variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-white brand-section-heading mb-6"
-                    >
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-white brand-section-heading mb-6">
                         Let&apos;s <span className="brand-underline">Connect</span>
                     </motion.h2>
-                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-base mb-8" style={{ color: "var(--brand-text-gray)" }}>
+                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-base mb-8" style={{ color: "var(--brand-text-secondary)" }}>
                         Whether you want to be a guest on Mind Your Bizniz, book a production session, or just connect — I&apos;d love to hear from you.
                     </motion.p>
                     <motion.div variants={fadeUp} custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex justify-center gap-4 flex-wrap">

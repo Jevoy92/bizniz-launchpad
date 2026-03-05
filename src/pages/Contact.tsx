@@ -29,7 +29,6 @@ const HONEYBOOK_PID = "64f18afafb99b50197686f91";
 
 const Contact = () => {
     useEffect(() => {
-        // Load HoneyBook widget script
         if (!(window as any)._HB_) {
             (window as any)._HB_ = {};
         }
@@ -53,31 +52,27 @@ const Contact = () => {
                     <motion.p variants={fadeUp} custom={0} initial="hidden" animate="visible" className="text-sm font-medium mb-4" style={{ color: "var(--brand-orange)" }}>
                         LET&apos;S CONNECT
                     </motion.p>
-                    <motion.h1
-                        variants={fadeUp} custom={1} initial="hidden" animate="visible"
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                    >
+                    <motion.h1 variants={fadeUp} custom={1} initial="hidden" animate="visible" className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                         Get in <span className="brand-underline">Touch</span>
                     </motion.h1>
-                    <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible" className="mt-4 text-base md:text-lg max-w-2xl" style={{ color: "var(--brand-text-gray)" }}>
+                    <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible" className="mt-4 text-base md:text-lg max-w-2xl" style={{ color: "var(--brand-text-secondary)" }}>
                         Whether you want to be a guest on the show, book a studio session, or just say what&apos;s up — I&apos;d love to hear from you.
                     </motion.p>
                 </div>
             </section>
 
             {/* ───── FORM + INFO ───── */}
-            <section className="py-16 md:py-24" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-16 md:py-24" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
                     {/* HoneyBook Form */}
                     <motion.div variants={stagger} initial="hidden" animate="visible">
-                        <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-bold mb-6" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>
+                        <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-bold mb-6" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>
                             Send a Message
                         </motion.h2>
                         <motion.div variants={fadeUp} custom={1}>
                             <div className="hb-p-64f18afafb99b50197686f91-3"></div>
                             <img height="1" width="1" style={{ display: "none" }} src="https://www.honeybook.com/p.png?pid=64f18afafb99b50197686f91" alt="" />
-                            <p className="mt-4 text-sm" style={{ color: "var(--brand-text-gray)" }}>
+                            <p className="mt-4 text-sm" style={{ color: "var(--brand-text-secondary)" }}>
                                 Having trouble with the form?{" "}
                                 <a href="https://www.honeybook.com/widget/palmer_house_productions_297353/cf_id/69a8e6bfcbad18003b2076b9" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--brand-orange)" }}>
                                     Click here to reach out directly
@@ -88,19 +83,18 @@ const Contact = () => {
 
                     {/* Info + Socials */}
                     <motion.div variants={stagger} initial="hidden" animate="visible">
-                        <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-bold mb-6" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>
+                        <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-bold mb-6" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>
                             Other Ways to Connect
                         </motion.h2>
 
-                        {/* Contact info */}
                         <motion.div variants={fadeUp} custom={1} className="space-y-4 mb-10">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.1)" }}>
                                     <Mail size={20} style={{ color: "var(--brand-orange)" }} />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-dark)" }}>Email</p>
-                                    <a href="mailto:hello@mindyourbizniz.co" className="text-sm" style={{ color: "var(--brand-text-gray)" }}>hello@mindyourbizniz.co</a>
+                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Email</p>
+                                    <a href="mailto:hello@mindyourbizniz.co" className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>hello@mindyourbizniz.co</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -108,8 +102,8 @@ const Contact = () => {
                                     <MapPin size={20} style={{ color: "var(--brand-orange)" }} />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-dark)" }}>Location</p>
-                                    <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Seattle, Washington</p>
+                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Location</p>
+                                    <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Seattle, Washington</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -117,7 +111,7 @@ const Contact = () => {
                                     <Globe size={20} style={{ color: "var(--brand-orange)" }} />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-dark)" }}>Websites</p>
+                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Websites</p>
                                     <div className="flex flex-wrap gap-2">
                                         {["jevoypalmer.com", "palmerhouseproductions.com", "yourboyjevoy.com"].map((site) => (
                                             <a key={site} href={`https://www.${site}`} target="_blank" rel="noopener noreferrer" className="text-xs underline" style={{ color: "var(--brand-orange)" }}>
@@ -129,8 +123,7 @@ const Contact = () => {
                             </div>
                         </motion.div>
 
-                        {/* Social grid */}
-                        <motion.h3 variants={fadeUp} custom={2} className="text-lg font-bold mb-4" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>
+                        <motion.h3 variants={fadeUp} custom={2} className="text-lg font-bold mb-4" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>
                             Follow the Journey
                         </motion.h3>
                         <motion.div variants={stagger} className="grid grid-cols-2 gap-3">
@@ -143,12 +136,12 @@ const Contact = () => {
                                     variants={fadeUp}
                                     custom={i + 3}
                                     className="flex items-center gap-3 p-4 rounded-xl transition-transform hover:-translate-y-1"
-                                    style={{ background: "white", border: "1px solid var(--brand-border-light)" }}
+                                    style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}
                                 >
                                     <s.icon size={20} style={{ color: "var(--brand-orange)" }} />
                                     <div>
-                                        <p className="text-sm font-medium" style={{ color: "var(--brand-text-dark)" }}>{s.label}</p>
-                                        <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>{s.handle}</p>
+                                        <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>{s.label}</p>
+                                        <p className="text-xs" style={{ color: "var(--brand-text-secondary)" }}>{s.handle}</p>
                                     </div>
                                 </motion.a>
                             ))}
