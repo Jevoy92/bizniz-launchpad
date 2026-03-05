@@ -270,7 +270,7 @@ const Index = () => {
               </motion.p>
               {/* As Seen On Badge */}
               <motion.div variants={fadeUp} custom={1.5} className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
-                ⭐ As Seen On: Daymond John&apos;s Next Level CEO — Inside Success TV
+                🎬 Coming Soon: Cast on Daymond John&apos;s Next Level CEO — Inside Success TV
               </motion.div>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
                 <a href="#episode" className="brand-btn-primary">
@@ -476,7 +476,7 @@ const Index = () => {
                   Jamaican-Born, Seattle-Based. Building Something Real.
                 </motion.h2>
                 <motion.p variants={fadeUp} custom={2} className="mt-4 text-base leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>
-                  I&apos;m Jevoy Palmer — filmmaker, entrepreneur, and creative strategist. I run Palmer House Productions (cinematic video systems for founders), the YourBoyJevoy creative lab, and beSettld (lifestyle support for seniors and busy professionals). Recently cast on Daymond John&apos;s Next Level CEO via Inside Success TV.
+                  I&apos;m Jevoy Palmer — filmmaker, entrepreneur, and creative strategist. I run Palmer House Productions (cinematic video systems for founders), the YourBoyJevoy creative lab, and beSettld (lifestyle support for seniors and busy professionals). Accepted into Daymond John&apos;s Next Level CEO on Inside Success TV — coming soon.
                 </motion.p>
                 <motion.ul variants={fadeUp} custom={3} className="mt-6 space-y-3">
                   {["Cast on Daymond John's Next Level CEO", "Studio-grade production quality", "Real conversations, real growth"].map((item) => (
