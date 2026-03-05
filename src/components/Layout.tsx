@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu, X, Instagram, Youtube, Globe } from "lucide-react";
+import { ArrowUpRight, Menu, X, Instagram, Youtube, Globe, Sun, Moon } from "lucide-react";
 import { useState, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "next-themes";
 
 interface LayoutProps {
     children: ReactNode;
@@ -19,6 +20,7 @@ const NAV_LINKS = [
 const Layout = ({ children }: LayoutProps) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const { theme, setTheme } = useTheme();
 
     return (
         <>
@@ -45,9 +47,16 @@ const Layout = ({ children }: LayoutProps) => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-3">
-                        <Link to="/contact" className="hidden md:inline-flex brand-btn-primary text-sm py-2 px-5">
-                            Get in Touch <span className="brand-icon-circle w-6 h-6 text-xs"><ArrowUpRight size={14} /></span>
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            className="w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition"
+                            aria-label="Toggle theme"
+                        >
+                            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                        </button>
+                        <Link to="/contact" className="hidden md:inline-flex brand-btn-primary text-xs py-1.5 px-4">
+                            Get in Touch <span className="brand-icon-circle w-5 h-5"><ArrowUpRight size={12} /></span>
                         </Link>
                         <button
                             className="md:hidden text-white"
