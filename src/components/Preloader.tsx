@@ -11,7 +11,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
 
     useEffect(() => {
         // Animate progress from 0 to 100
-        const duration = 2200;
+        const duration = 3500;
         const start = performance.now();
 
         const tick = (now: number) => {
@@ -36,7 +36,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         if (phase !== "loading") return;
         const interval = setInterval(() => {
             setWordIdx((prev) => (prev + 1) % WORDS.length);
-        }, 500);
+        }, 700);
         return () => clearInterval(interval);
     }, [phase]);
 
@@ -157,7 +157,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
                         >
-                            {progress < 100 ? WORDS.map((word, i) => (
+                            {WORDS.map((word, i) => (
                                 <motion.span
                                     key={word}
                                     className="text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300"
@@ -172,15 +172,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                                 >
                                     {word}
                                 </motion.span>
-                            )) : (
-                                <motion.span
-                                    className="text-sm tracking-[0.2em] uppercase font-medium text-white"
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                >
-                                    Ready
-                                </motion.span>
-                            )}
+                            ))}
                         </motion.div>
                     </motion.div>
 
