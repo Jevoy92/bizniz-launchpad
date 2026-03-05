@@ -118,8 +118,8 @@ const About = () => {
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
                         {VENTURES.map((v, i) => (
                             <motion.a key={i} href={v.href} target="_blank" rel="noopener noreferrer" variants={fadeUp} custom={i} className="group rounded-3xl overflow-hidden transition-transform hover:-translate-y-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
-                                <div className="h-48 overflow-hidden flex items-center justify-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                                    <img src={v.img} alt={v.name} className="w-24 h-24 object-contain" />
+                                <div className="h-48 overflow-hidden flex items-center justify-center rounded-2xl m-3" style={{ background: "linear-gradient(135deg, #f5e6d3, #e8d5c0)" }}>
+                                    <img src={v.img} alt={v.name} className="w-28 h-28 object-contain" />
                                 </div>
                                 <div className="p-6">
                                     <div className="flex items-center gap-3 mb-3">
