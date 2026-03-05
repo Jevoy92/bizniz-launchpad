@@ -157,8 +157,6 @@ const Layout = ({ children }: LayoutProps) => {
                         {
                             title: "Listen on", links: [
                                 { label: "YouTube", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
-                                { label: "Spotify", href: "#", disabled: true },
-                                { label: "Apple Podcasts", href: "#", disabled: true },
                             ]
                         },
                     ].map((col) => (
