@@ -42,136 +42,134 @@ const stagger = {
 const EPISODES = [
   {
     num: "01",
-    host: "Max Hudson",
-    title: "Mindful Growth in Everyday Life",
-    tags: "Mental Health, Personal Development",
-    time: "1 hr 24 mins",
+    host: "Jevoy Palmer",
+    title: "Why I Started Mind Your Bizniz",
+    tags: "Entrepreneurship",
+    time: "38 mins",
     img: "/episode-1.png",
   },
   {
     num: "02",
-    host: "Max Hudson",
-    title: "Cool Side Hustles That Became Million-Dollar Successes",
-    tags: "Personal Development",
-    time: "90 mins",
+    host: "Jevoy Palmer",
+    title: "Building a Brand From Scratch",
+    tags: "Branding & Strategy",
+    time: "42 mins",
     img: "/episode-2.png",
   },
   {
-    num: "11",
-    host: "Max Hudson",
-    title: "The Dopamine Experiment",
-    tags: "Science and Nature",
+    num: "03",
+    host: "Jevoy Palmer",
+    title: "The Creative Entrepreneur's Playbook",
+    tags: "Creativity & Business",
     time: "30 mins",
     img: "/episode-3.png",
   },
   {
-    num: "03",
-    host: "Ethan Carter",
-    title: "The Art of Deep Work",
-    tags: "Personal Development",
+    num: "04",
+    host: "Jevoy Palmer",
+    title: "Systems Over Hustle",
+    tags: "Growth & Mindset",
     time: "45 mins",
     img: "/episode-4.png",
   },
 ];
 
 const CATEGORIES = [
-  { name: "Technology", episodes: 378, icon: Monitor, wide: true },
-  { name: "Comedy", episodes: 378, icon: Smile, wide: false },
-  { name: "Design and Development", episodes: 378, icon: PenTool, wide: false },
-  { name: "Health & Fitness", episodes: 158, icon: Heart, wide: false },
-  { name: "Business", episodes: 402, icon: Briefcase, wide: false },
-  { name: "Education", episodes: 694, icon: GraduationCap, wide: false },
+  { name: "Entrepreneurship", episodes: "Featured", icon: Monitor, wide: true },
+  { name: "Creativity", episodes: "New", icon: PenTool, wide: false },
+  { name: "Leadership", episodes: "Coming Soon", icon: Briefcase, wide: false },
+  { name: "Mindset & Growth", episodes: "New", icon: Heart, wide: false },
+  { name: "Branding", episodes: "Featured", icon: Smile, wide: false },
+  { name: "Production & Film", episodes: "Coming Soon", icon: GraduationCap, wide: false },
 ];
 
 const FEATURES = [
   {
     icon: Headphones,
-    title: "Seamless Streaming",
-    desc: "Enjoy your music anywhere, anytime! Whether at home, commuting, or relaxing in the park, let the tunes lift your spirits!",
+    title: "Studio-Grade Audio",
+    desc: "Every episode is recorded and mixed in our professional studio, ensuring crisp, cinematic sound quality.",
   },
   {
     icon: Bell,
-    title: "Episode Notifications",
-    desc: "Stay updated with your favorite podcasts! Click subscribe for instant alerts on new episodes and enjoy your listening experience!",
+    title: "New Episodes Dropping",
+    desc: "Subscribe to stay in the loop. Every new conversation is a chance to learn, grow, and get inspired.",
   },
   {
     icon: Volume2,
-    title: "High-Quality Audio",
-    desc: "Get ready for awesome sound that totally amps up your music and podcasts! This setup makes every tune and episode unforgettable.",
+    title: "Full Production Support",
+    desc: "From filming to editing to final export — we offer tiered production packages so you can focus on your message.",
   },
 ];
 
 const TESTIMONIALS = [
   {
-    text: "These podcasts are fantastic! They cover a variety of topics, making each episode exciting. Can't wait for the next one!",
-    name: "Kristin Watson",
-    role: "Marketing Specialist",
+    text: "Jevoy brings an energy and authenticity to every conversation. Mind Your Bizniz is the podcast I didn't know I needed.",
+    name: "Early Listener",
+    role: "Entrepreneur",
   },
   {
-    text: "I love these podcasts! Each episode covers diverse topics, making them fun. Can't wait for the next one!",
-    name: "Sarah Chen",
-    role: "Expert Product Designer",
+    text: "The production quality is insane for a new podcast. You can tell there's real craft behind every episode.",
+    name: "Community Member",
+    role: "Creative Professional",
   },
   {
-    text: "The audio quality and storytelling are absolutely top-notch. I'm completely hooked on every episode they release!",
-    name: "James Rodriguez",
-    role: "Content Creator",
+    text: "Real talk, real stories, real growth. This is the kind of content the world needs more of.",
+    name: "Supporter",
+    role: "Business Owner",
   },
 ];
 
 const HOSTS = [
-  { name: "Max Hudson", role: "Documentary Maker", img: "/episode-3.png" },
-  { name: "Ethan Carter", role: "Tech Analyst & Podcast Host", img: "/episode-4.png" },
-  { name: "Mason Clarke", role: "Health & Wellness Coach", img: "/host-3.png" },
+  { name: "Jevoy Palmer", role: "Host, Creative Strategist & Next Level CEO Cast", img: "/jevoy-portrait.jpg" },
 ];
 
 const PRICING = [
   {
-    plan: "Individual Plan",
-    desc: "Enjoy ad-free music and offline playlists with one easy account!",
-    features: ["Basic audio quality", "Access to all free podcasts", "Create and save playlists"],
-    price: "$0.00",
+    plan: "Space Only",
+    desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.",
+    features: ["Studio rental access", "Professional equipment", "Raw file delivery"],
+    price: "Contact",
     featured: false,
   },
   {
-    plan: "Professional Plan",
-    desc: "Get rid of ads, download stuff offline, and manage your account like a pro!",
-    features: ["Ad-free listening", "High-quality audio", "Early access to new episodes"],
-    price: "$9.99",
+    plan: "Production Partner",
+    desc: "We film your session and our team handles editing, sound mixing, and color grading.",
+    features: ["Everything in Space Only", "Professional editing", "Sound mixing & color grading"],
+    price: "Contact",
     featured: true,
   },
   {
-    plan: "Premium Plan",
-    desc: "Get all the cool perks with just one account, like no ads and offline listening.",
-    features: ["All advanced features", "Exclusive content and podcasts", "Access to live podcast events"],
-    price: "$19.99",
+    plan: "Full Service",
+    desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.",
+    features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports"],
+    price: "Contact",
     featured: false,
   },
 ];
 
 const BLOGS = [
   {
-    title: "Breaking Down the Headlines: Best Podcasts for Current Affairs",
-    date: "January 26, 24",
-    read: "20 mins read",
+    title: "Why Every Entrepreneur Needs a Podcast",
+    date: "March 2025",
+    read: "5 min read",
     img: "/episode-1.png",
   },
   {
-    title: "The Ultimate Guide to Finding Your Perfect Podcast",
-    date: "April 18, 2025",
-    read: "10 mins read",
+    title: "Cast on Daymond John's Next Level CEO — Here's What I Learned",
+    date: "Coming Soon",
+    read: "",
     img: "/episode-2.png",
   },
   {
-    title: "Essential Podcast Apps and Tools for Every Listener",
-    date: "April 8, 2025",
-    read: "10 mins read",
+    title: "How I Built a Production Studio From Nothing",
+    date: "Coming Soon",
+    read: "",
     img: "/episode-3.png",
   },
   {
-    title: "The Best Podcasts to Inspire, Educate, and Entertain",
-    date: "March 13, 2025",
-    read: "04 mins read",
+    title: "Lessons From My First 10 Conversations",
+    date: "Coming Soon",
+    read: "",
     img: "/episode-4.png",
   },
 ];
@@ -180,7 +178,6 @@ const BLOGS = [
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [pricingTab, setPricingTab] = useState<"monthly" | "annually">("monthly");
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -269,8 +266,12 @@ const Index = () => {
                 <span className="brand-underline">Episodes</span>, Dreams Into Reality
               </motion.h1>
               <motion.p variants={fadeUp} custom={1} className="mt-5 text-base md:text-lg" style={{ color: "var(--brand-text-gray)" }}>
-                Check out some awesome podcasts packed with cool stories and insights. You might just find your new favorite!
+                Real conversations about entrepreneurship, creativity, and what it takes to build something from nothing. Hosted by Jevoy Palmer.
               </motion.p>
+              {/* As Seen On Badge */}
+              <motion.div variants={fadeUp} custom={1.5} className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
+                ⭐ As Seen On: Daymond John&apos;s Next Level CEO — Inside Success TV
+              </motion.div>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
                 <a href="#episode" className="brand-btn-primary">
                   Start Listening <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
@@ -447,9 +448,9 @@ const Index = () => {
                 className="relative"
               >
                 <div className="rounded-3xl overflow-hidden aspect-[4/3] relative">
-                  <img src="/episode-3.png" alt="About us" className="w-full h-full object-cover" />
+                  <img src="/jevoy-portrait.jpg" alt="Jevoy Palmer" className="w-full h-full object-cover" />
                   <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white rounded-full px-4 py-2 flex items-center gap-2 text-sm">
-                    Discover the Journey Behind Us
+                    The Story Behind the Mic
                     <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "var(--brand-orange)" }}>
                       <Play size={14} className="text-white ml-0.5" />
                     </div>
@@ -464,7 +465,7 @@ const Index = () => {
               {/* Text */}
               <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                 <motion.p variants={fadeUp} custom={0} className="text-sm font-medium uppercase tracking-wider" style={{ color: "var(--brand-text-gray)" }}>
-                  Discover the Journey Behind Us
+                  The Story Behind the Mic
                 </motion.p>
                 <motion.h2
                   variants={fadeUp}
@@ -472,20 +473,20 @@ const Index = () => {
                   className="mt-3 text-3xl md:text-4xl font-bold brand-section-heading"
                   style={{ color: "var(--brand-text-dark)" }}
                 >
-                  Discover the Passion Behind Our Podcast Journey
+                  Jamaican-Born, Seattle-Based. Building Something Real.
                 </motion.h2>
                 <motion.p variants={fadeUp} custom={2} className="mt-4 text-base leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>
-                  We&apos;re dedicated to uniting people through our engaging podcasts, where we share incredible stories and showcase a diverse range of voices.
+                  I&apos;m Jevoy Palmer — filmmaker, entrepreneur, and creative strategist. I run Palmer House Productions (cinematic video systems for founders), the YourBoyJevoy creative lab, and beSettld (lifestyle support for seniors and busy professionals). Recently cast on Daymond John&apos;s Next Level CEO via Inside Success TV.
                 </motion.p>
                 <motion.ul variants={fadeUp} custom={3} className="mt-6 space-y-3">
-                  {["Personalized playlists", "Awesome audio streaming vibes!"].map((item) => (
+                  {["Cast on Daymond John's Next Level CEO", "Studio-grade production quality", "Real conversations, real growth"].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-[var(--brand-text-dark)]">
                       <Star size={18} style={{ color: "var(--brand-orange)" }} /> {item}
                     </li>
                   ))}
                 </motion.ul>
                 <motion.div variants={fadeUp} custom={4} className="mt-8">
-                  <a href="#" className="brand-btn-outline-dark">
+                  <a href="https://www.jevoypalmer.com" target="_blank" rel="noopener noreferrer" className="brand-btn-outline-dark">
                     Learn More <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                   </a>
                 </motion.div>
@@ -575,7 +576,7 @@ const Index = () => {
                       <ArrowUpRight size={20} style={{ color: "var(--brand-text-gray)" }} />
                     </div>
                     <h3 className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>{cat.name}</h3>
-                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-gray)" }}>{cat.episodes} Episode Available</p>
+                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-gray)" }}>{cat.episodes}</p>
                     <div className="mt-4 flex items-center gap-2">
                       <div className="flex -space-x-2">
                         {[1, 2, 3].map((j) => (
@@ -758,8 +759,8 @@ const Index = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white brand-section-heading"
             >
-              Meet Our <span className="brand-underline">Hosts</span> That Make
-              <br className="hidden sm:block" /> Every Story Shine
+              Meet Your <span className="brand-underline">Host</span>
+              <br className="hidden sm:block" /> The Voice Behind the Mic
             </motion.h2>
 
             <motion.div
@@ -767,7 +768,7 @@ const Index = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="mt-14 flex justify-center"
             >
               {HOSTS.map((h, i) => (
                 <motion.div key={i} variants={fadeUp} custom={i} className="brand-card-host group">
@@ -794,19 +795,6 @@ const Index = () => {
                 </motion.div>
               ))}
             </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-12 text-center"
-            >
-              <a href="#" className="brand-btn-primary">
-                Show Our All Hosts <span className="brand-icon-circle w-7 h-7 bg-white text-[var(--brand-text-dark)]"><ArrowUpRight size={16} /></span>
-              </a>
-            </motion.div>
           </div>
         </section>
 
@@ -822,7 +810,7 @@ const Index = () => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-center brand-section-heading"
               style={{ color: "var(--brand-text-dark)" }}
             >
-              <span className="brand-underline">Upgrade</span> Your Listening Today
+              Book Your <span className="brand-underline">Session</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -833,41 +821,8 @@ const Index = () => {
               className="mt-4 text-center text-base max-w-xl mx-auto"
               style={{ color: "var(--brand-text-gray)" }}
             >
-              Pick a plan that suits your vibe! Whether you&apos;re looking for free access or want to grab some cool premium perks, we&apos;ve got your back!
+              Whether you bring your own edit or want the full treatment, we&apos;ve got a studio package that fits your vision.
             </motion.p>
-
-            {/* Toggle */}
-            <motion.div
-              variants={fadeUp}
-              custom={2}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-8 flex items-center justify-center"
-            >
-              <div className="inline-flex rounded-full p-1" style={{ border: "1px solid var(--brand-border-light)" }}>
-                <button
-                  onClick={() => setPricingTab("monthly")}
-                  className="px-6 py-2 rounded-full text-sm font-medium transition"
-                  style={{
-                    background: pricingTab === "monthly" ? "var(--brand-dark)" : "transparent",
-                    color: pricingTab === "monthly" ? "white" : "var(--brand-text-gray)",
-                  }}
-                >
-                  Monthly
-                </button>
-                <button
-                  onClick={() => setPricingTab("annually")}
-                  className="px-6 py-2 rounded-full text-sm font-medium transition"
-                  style={{
-                    background: pricingTab === "annually" ? "var(--brand-dark)" : "transparent",
-                    color: pricingTab === "annually" ? "white" : "var(--brand-text-gray)",
-                  }}
-                >
-                  Annually
-                </button>
-              </div>
-            </motion.div>
 
             {/* Cards */}
             <motion.div
@@ -901,10 +856,9 @@ const Index = () => {
                   </ul>
                   <p className="mt-6">
                     <span className="text-3xl font-bold" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>{p.price}</span>
-                    <span className="text-sm" style={{ color: "var(--brand-text-gray)" }}> /per month</span>
                   </p>
                   <a
-                    href="#"
+                    href="#contact"
                     className="mt-6 w-full inline-flex items-center justify-between rounded-full px-5 py-3 text-sm font-medium transition"
                     style={{
                       border: p.featured ? "2px solid var(--brand-orange)" : "1px solid var(--brand-border-light)",
@@ -912,7 +866,7 @@ const Index = () => {
                       background: p.featured ? "rgba(212,132,90,0.05)" : "transparent",
                     }}
                   >
-                    Start Listening with Subscribe
+                    Book a Session
                     <span className="brand-icon-circle w-8 h-8"><ArrowUpRight size={16} /></span>
                   </a>
                 </motion.div>
@@ -944,7 +898,7 @@ const Index = () => {
               className="mt-4 text-center text-base max-w-xl mx-auto"
               style={{ color: "var(--brand-text-gray)" }}
             >
-              Discover insights, tips, and the latest trends in the podcasting world. Stay informed and inspired with our curated articles.
+              Insights, stories, and lessons from the journey of building Mind Your Bizniz.
             </motion.p>
 
             <motion.div
@@ -966,8 +920,7 @@ const Index = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2 text-xs text-white/80 mb-1">
                         <span>{b.date}</span>
-                        <span>·</span>
-                        <span>{b.read}</span>
+                        {b.read && <><span>·</span><span>{b.read}</span></>}
                       </div>
                       <h3 className="text-white font-bold text-lg leading-snug" style={{ fontFamily: "var(--font-heading)" }}>
                         {b.title}
@@ -1004,10 +957,10 @@ const Index = () => {
                   className="text-3xl md:text-4xl lg:text-5xl font-bold brand-section-heading"
                   style={{ color: "var(--brand-text-dark)" }}
                 >
-                  Stay Updated and Subscribe to Our Newsletter!
+                  Stay in the Loop — Subscribe to the Newsletter!
                 </motion.h2>
                 <motion.p variants={fadeUp} custom={1} className="mt-4 text-base leading-relaxed" style={{ color: "var(--brand-text-gray)" }}>
-                  Hey there! Join our newsletter for the latest updates, fun podcast recommendations, and some awesome content delivered straight to your inbox!
+                  Get updates on new episodes, behind-the-scenes content, and exclusive insights delivered straight to your inbox.
                 </motion.p>
                 <motion.div variants={fadeUp} custom={2} className="mt-8 flex gap-3">
                   <input
@@ -1030,7 +983,7 @@ const Index = () => {
               >
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden mx-auto" style={{ background: "var(--brand-orange)" }}>
-                    <img src="/hero-person.png" alt="Newsletter" className="w-full h-full object-cover" />
+                    <img src="/jevoy-portrait.jpg" alt="Jevoy Palmer" className="w-full h-full object-cover" />
                   </div>
                   {/* Floating stat */}
                   <div className="absolute bottom-[-16px] right-0 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4">
@@ -1065,26 +1018,31 @@ const Index = () => {
                   </div>
                   <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
                 </div>
-                <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>We&apos;re on social</p>
+                <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Follow the journey</p>
                 <div className="flex gap-3 mt-3">
-                  {["𝕏", "📷", "🧵", "📘"].map((icon, i) => (
-                    <div key={i} className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-sm">
-                      {icon}
-                    </div>
+                  {[
+                    { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
+                    { icon: "🎬", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/" },
+                    { icon: "🎨", href: "https://www.patreon.com/c/yourboyjevoy" },
+                    { icon: "🌐", href: "https://www.jevoypalmer.com" },
+                  ].map((social, i) => (
+                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-sm">
+                      {social.icon}
+                    </a>
                   ))}
                 </div>
                 <div className="mt-4 space-y-2 text-sm" style={{ color: "var(--brand-text-gray)" }}>
                   <p>hello@mindyourbizniz.co</p>
-                  <p>4886 Stroman Drive, South Stanton, California</p>
+                  <p>Seattle, Washington</p>
                 </div>
               </div>
 
               {/* Links */}
               {[
-                { title: "Company", links: ["About Us", "Our Host", "Newsletter", "Blog & Articles"] },
-                { title: "Quick Links", links: ["Home", "Episodes", "Pricing Plan"] },
-                { title: "Useful Links", links: ["Contact Us", "Privacy Policy", "Terms & Condition"] },
-                { title: "Listen on", links: ["Google Podcasts", "Spotify", "Apple Podcasts", "RSS Feed"] },
+                { title: "Company", links: ["About Jevoy", "Palmer House Productions", "Newsletter", "Blog"] },
+                { title: "Quick Links", links: ["Home", "Episodes", "Studio Packages"] },
+                { title: "Useful Links", links: ["Contact", "Privacy Policy", "Terms & Conditions"] },
+                { title: "Listen on", links: ["Spotify", "Apple Podcasts", "YouTube", "RSS Feed"] },
               ].map((col) => (
                 <div key={col.title}>
                   <h4 className="text-white font-semibold text-sm mb-4" style={{ fontFamily: "var(--font-heading)" }}>{col.title}</h4>
@@ -1102,7 +1060,7 @@ const Index = () => {
             </div>
 
             <div className="border-t pt-6 text-center text-sm" style={{ borderColor: "rgba(255,255,255,0.08)", color: "var(--brand-text-gray)" }}>
-              © Copyrights 2025 Mind Your Bizniz. All rights reserved.
+              © 2025 Mind Your Bizniz. A Jevoy Palmer Production. All rights reserved.
             </div>
           </div>
         </footer>
@@ -1111,4 +1069,6 @@ const Index = () => {
   );
 };
 
+
 export default Index;
+
