@@ -20,6 +20,8 @@ import {
   Instagram,
   Youtube,
   Globe,
+  Film,
+  Sparkles,
 } from "lucide-react";
 import { useState, useCallback, useEffect } from "react";
 
@@ -147,22 +149,12 @@ const Index = () => {
               <motion.p variants={fadeUp} custom={1} className="mt-5 text-base md:text-lg" style={{ color: "var(--brand-text-accent-secondary)" }}>
                 Real conversations about entrepreneurship, creativity, and what it takes to build something from nothing. Hosted by Jevoy Palmer.
               </motion.p>
-              <motion.div
-                variants={fadeUp}
-                custom={1.5}
-                className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium"
-                style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}
-              >
-                🎬 Coming Soon: Cast on Daymond John&apos;s Next Level CEO — Inside Success TV
-              </motion.div>
-              <motion.div
-                variants={fadeUp}
-                custom={1.7}
-                className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium"
-                style={{ background: "rgba(212,132,90,0.08)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.2)" }}
-              >
-                ✨ 1 Free Guest Spot Every Month — <a href="/contact" className="underline font-semibold">Join the Waitlist</a>
-              </motion.div>
+              <motion.p variants={fadeUp} custom={1.5} className="mt-4 flex items-center gap-2 text-xs font-medium" style={{ color: "var(--brand-orange)" }}>
+                <Film size={14} /> Coming Soon: Cast on Daymond John&apos;s Next Level CEO — Inside Success TV
+              </motion.p>
+              <motion.p variants={fadeUp} custom={1.7} className="mt-2 flex items-center gap-2 text-xs font-medium" style={{ color: "var(--brand-orange)" }}>
+                <Sparkles size={14} /> 1 Free Guest Spot Every Month — <a href="/contact" className="underline font-semibold">Join the Waitlist</a>
+              </motion.p>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
                 <motion.a
                   href="#episode"
