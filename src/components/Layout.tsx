@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { ArrowUpRight, Menu, X, Instagram, Youtube, Globe, Sun, Moon } from "lucide-react";
-import { useState, ReactNode } from "react";
+import { useState, useRef, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 
@@ -18,13 +18,28 @@ const NAV_LINKS = [
 
 const Layout = ({ children }: LayoutProps) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [navVisible, setNavVisible] = useState(true);
     const location = useLocation();
     const { theme, setTheme } = useTheme();
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() ?? 0;
+        if (latest < 50) {
+            setNavVisible(true);
+        } else {
+            setNavVisible(latest < previous);
+        }
+    });
 
     return (
         <>
             {/* ───── NAVBAR ───── */}
-            <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
+            <motion.nav
+                className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl"
+                animate={{ y: navVisible ? 0 : -100, opacity: navVisible ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
                 <div
                     className="flex items-center justify-between h-14 px-4 md:px-5 rounded-full border"
                     style={{
@@ -113,7 +128,7 @@ const Layout = ({ children }: LayoutProps) => {
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </nav>
+            </motion.nav>
 
             {/* ───── PAGE CONTENT ───── */}
             <main>{children}</main>
