@@ -148,32 +148,6 @@ const PRICING = [
   },
 ];
 
-const BLOGS = [
-  {
-    title: "Why Every Entrepreneur Needs a Podcast",
-    date: "March 2025",
-    read: "5 min read",
-    img: "/episode-1.png",
-  },
-  {
-    title: "Cast on Daymond John's Next Level CEO — Here's What I Learned",
-    date: "Coming Soon",
-    read: "",
-    img: "/episode-2.png",
-  },
-  {
-    title: "How I Built a Production Studio From Nothing",
-    date: "Coming Soon",
-    read: "",
-    img: "/episode-3.png",
-  },
-  {
-    title: "Lessons From My First 10 Conversations",
-    date: "Coming Soon",
-    read: "",
-    img: "/episode-4.png",
-  },
-];
 
 /* ─── COMPONENT ───────────────────────── */
 
@@ -879,76 +853,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ───── BLOGS ───── */}
-        <section id="blog" className="py-20 md:py-28" style={{ background: "var(--brand-light)" }}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.h2
-              variants={fadeUp}
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-center brand-section-heading"
-              style={{ color: "var(--brand-text-dark)" }}
-            >
-              Stay <span className="brand-underline">Updated</span> with Our Blogs
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={1}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-4 text-center text-base max-w-xl mx-auto"
-              style={{ color: "var(--brand-text-gray)" }}
-            >
-              Insights, stories, and lessons from the journey of building Mind Your Bizniz.
-            </motion.p>
-
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-14 grid sm:grid-cols-2 gap-6"
-            >
-              {BLOGS.map((b, i) => (
-                <motion.div key={i} variants={fadeUp} custom={i} className="brand-card-blog group">
-                  <div className="aspect-[16/10] rounded-2xl overflow-hidden relative">
-                    <img
-                      src={b.img}
-                      alt={b.title}
-                      className="w-full h-full object-cover transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex items-center gap-2 text-xs text-white/80 mb-1">
-                        <span>{b.date}</span>
-                        {b.read && <><span>·</span><span>{b.read}</span></>}
-                      </div>
-                      <h3 className="text-white font-bold text-lg leading-snug" style={{ fontFamily: "var(--font-heading)" }}>
-                        {b.title}
-                      </h3>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-12 text-center"
-            >
-              <a href="#" className="brand-btn-outline-dark">
-                Browse More Blogs <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
-              </a>
-            </motion.div>
-          </div>
-        </section>
 
         {/* ───── NEWSLETTER ───── */}
         <section id="newsletter" className="py-20 md:py-28" style={{ background: "var(--brand-light)" }}>
