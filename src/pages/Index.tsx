@@ -291,8 +291,8 @@ const Index = () => {
                   ))}
                 </div>
                 <div>
-                  <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>20M+</span>
-                  <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Online Listeners</p>
+                  <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>Growing Fast</span>
+                  <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Engaged Community</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -322,8 +322,8 @@ const Index = () => {
                     <img src="/episode-3.png" alt="" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-[var(--brand-text-dark)] truncate">The Curious Mind Podcast</p>
-                    <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Kristin Watson</p>
+                    <p className="text-sm font-semibold text-[var(--brand-text-dark)] truncate">Mind Your Bizniz</p>
+                    <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Now Playing</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs" style={{ color: "var(--brand-text-gray)" }}>2:46</span>
                       <div className="flex-1 h-1 bg-gray-200 rounded-full">
@@ -345,8 +345,8 @@ const Index = () => {
                     <Mic size={18} style={{ color: "var(--brand-orange)" }} />
                   </div>
                   <div>
-                    <span className="font-bold text-lg text-[var(--brand-text-dark)]" style={{ fontFamily: "var(--font-heading)" }}>150K</span>
-                    <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Episode Available</p>
+                    <span className="font-bold text-lg text-[var(--brand-text-dark)]" style={{ fontFamily: "var(--font-heading)" }}>Fresh Content</span>
+                    <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Episodes Weekly</p>
                   </div>
                 </motion.div>
 
@@ -510,9 +510,9 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-3 gap-6 text-center">
                 {[
-                  { val: "150K+", label: "Episode released" },
-                  { val: "12M+", label: "Online subscriber" },
-                  { val: "20M+", label: "Worldwide Listeners" },
+                  { val: "Quality", label: "Episodes Released" },
+                  { val: "Global", label: "Subscriber Base" },
+                  { val: "Worldwide", label: "Engaged Listeners" },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl md:text-3xl font-bold" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>{s.val}</p>
@@ -584,7 +584,7 @@ const Index = () => {
                           </div>
                         ))}
                       </div>
-                      <span className="text-sm" style={{ color: "var(--brand-text-gray)" }}>20M+ Listeners</span>
+                      <span className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Growing Community</span>
                     </div>
                   </motion.div>
                 );
@@ -638,7 +638,7 @@ const Index = () => {
                         </div>
                       ))}
                     </div>
-                    <span className="font-semibold text-[var(--brand-text-dark)]">12M+ Subscriber</span>
+                    <span className="font-semibold text-[var(--brand-text-dark)]">Join the Community</span>
                   </div>
                   <div className="absolute top-8 right-0 bg-white rounded-full shadow-lg px-4 py-2 text-sm flex items-center gap-2">
                     <span style={{ color: "var(--brand-text-gray)" }}>Available on</span>
@@ -1035,8 +1035,8 @@ const Index = () => {
                   {/* Floating stat */}
                   <div className="absolute bottom-[-16px] right-0 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4">
                     <div>
-                      <p className="font-bold text-xl" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>4,836</p>
-                      <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Total Listeners</p>
+                      <p className="font-bold text-xl" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>Growing</p>
+                      <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Loyal Listeners</p>
                     </div>
                     <div className="border-l pl-4" style={{ borderColor: "var(--brand-border-light)" }}>
                       <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>Available on</p>

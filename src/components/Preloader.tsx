@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Headphones } from "lucide-react";
+
 
 const WORDS = ["Learn", "Grow", "Capture", "Create", "Inspire"];
 
