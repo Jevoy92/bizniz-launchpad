@@ -26,9 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
             <nav className="fixed top-0 w-full z-50" style={{ background: "rgba(26,18,11,0.92)", backdropFilter: "blur(16px)" }}>
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
                     <Link to="/" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-white/10 group-hover:scale-110">
-                            <img src="/logo-orange.png" alt="Logo" className="w-7 h-7 object-contain" />
-                        </div>
+                        <img src="/logo-orange.png" alt="Logo" className="w-10 h-10 object-contain transition-transform group-hover:scale-110" />
                         <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
                     </Link>
 
