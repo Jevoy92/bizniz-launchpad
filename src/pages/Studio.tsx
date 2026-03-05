@@ -21,6 +21,7 @@ const PACKAGES = [
     { name: "Space Only", price: "Contact", desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.", features: ["Studio rental access", "Professional equipment", "Raw file delivery", "Flexible scheduling", "Sound-treated room"], popular: false },
     { name: "Production Partner", price: "Contact", desc: "We film your session and our team handles editing, sound mixing, and color grading.", features: ["Everything in Space Only", "Professional filming", "Sound mixing & color grading", "2 rounds of revisions", "Delivery within 7 days"], popular: true },
     { name: "Full Service", price: "Contact", desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.", features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports", "YouTube optimization", "Unlimited revisions"], popular: false },
+    { name: "Online Appearance", price: "Contact", desc: "Record remotely with professional-grade quality. We handle the tech so you can focus on the conversation.", features: ["Remote recording setup", "Professional audio optimization", "Screen & camera capture", "Post-production editing", "Delivery within 5 days"], popular: false },
 ];
 
 const PROCESS = [
@@ -103,11 +104,12 @@ const Studio = () => {
                         Three studios across the Pacific Northwest — pick the one closest to you.
                     </motion.p>
 
-                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
+                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
                             { city: "Bellevue", state: "WA", detail: "Eastside convenience with premium amenities" },
                             { city: "Renton", state: "WA", detail: "South King County's creative hub" },
                             { city: "Portland", state: "OR", detail: "Serving the Rose City and beyond" },
+                            { city: "Online", state: "Remote", detail: "Record from anywhere with pro-level quality" },
                         ].map((loc, i) => (
                             <motion.div key={i} variants={fadeUp} custom={i} className="p-8 rounded-2xl text-center transition-transform hover:-translate-y-1" style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}>
                                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(212,132,90,0.1)" }}>
@@ -128,7 +130,7 @@ const Studio = () => {
                         Studio <span className="brand-underline">Packages</span>
                     </motion.h2>
 
-                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
+                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {PACKAGES.map((pkg, i) => (
                             <motion.div key={i} variants={fadeUp} custom={i} className={`rounded-3xl p-8 transition-transform hover:-translate-y-1 ${pkg.popular ? "ring-2 ring-[var(--brand-orange)]" : ""}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
                                 {pkg.popular && (
@@ -148,7 +150,7 @@ const Studio = () => {
                                     </ul>
                                 </div>
                                 <p className="text-3xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-heading)" }}>{pkg.price}</p>
-                                <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}>
+                                <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`} style={!pkg.popular ? { color: "white", borderColor: "rgba(255,255,255,0.3)" } : undefined}>
                                     Book a Session <span className="brand-icon-circle w-6 h-6"><ArrowUpRight size={14} /></span>
                                 </Link>
                             </motion.div>
