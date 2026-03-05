@@ -13,7 +13,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         setShowOverlay(true);
-        const timer = setTimeout(() => setShowOverlay(false), 600);
+        const timer = setTimeout(() => setShowOverlay(false), 1200);
         return () => clearTimeout(timer);
     }, [location.pathname]);
 
@@ -26,7 +26,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
                         key={location.pathname + "-overlay"}
                         initial={{ y: 0 }}
                         animate={{ y: "-100%" }}
-                        transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1], delay: 0.1 }}
+                        transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.25 }}
                         style={{ background: "var(--brand-dark)", zIndex: 9999 }}
                         className="fixed inset-0 pointer-events-none"
                     >
@@ -34,7 +34,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
                             <motion.span
                                 initial={{ opacity: 1, scale: 1 }}
                                 animate={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
                                 className="text-2xl font-bold tracking-widest"
                                 style={{ color: "var(--brand-orange)", fontFamily: "var(--font-heading)" }}
                             >
@@ -51,7 +51,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
             >
                 {children}
             </motion.div>
