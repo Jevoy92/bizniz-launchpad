@@ -163,7 +163,7 @@ const Layout = ({ children }: LayoutProps) => {
                             ))}
                         </div>
                         
-                        <p className="text-white/40 text-xs">Seattle, Washington</p>
+                        <p className="text-white/40 text-xs">Bellevue, WA · Renton, WA · Portland, OR</p>
                     </div>
 
                     {[

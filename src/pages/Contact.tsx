@@ -102,8 +102,8 @@ const Contact = () => {
                                     <MapPin size={20} style={{ color: "var(--brand-orange)" }} />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Location</p>
-                                    <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Seattle, Washington</p>
+                                    <p className="text-sm font-medium" style={{ color: "var(--brand-text-primary)" }}>Locations</p>
+                                    <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Bellevue, WA · Renton, WA · Portland, OR</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">

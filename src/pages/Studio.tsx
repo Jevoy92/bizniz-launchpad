@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Volume2, Film, Scissors, Monitor, Check, ChevronDown } from "lucide-react";
+import { ArrowUpRight, Volume2, Film, Scissors, Monitor, Check, ChevronDown, MapPin } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -87,6 +87,34 @@ const Studio = () => {
                                 <span className="text-xs font-bold tracking-widest mb-2 block" style={{ color: "var(--brand-orange)" }}>STEP {p.step}</span>
                                 <h3 className="font-bold text-lg mb-2" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>{p.title}</h3>
                                 <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>{p.desc}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* ───── LOCATIONS ───── */}
+            <section className="py-20 md:py-28" style={{ background: "var(--brand-surface-alt)" }}>
+                <div className="max-w-7xl mx-auto px-6">
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading mb-4" style={{ color: "var(--brand-text-primary)" }}>
+                        Our <span className="brand-underline">Locations</span>
+                    </motion.h2>
+                    <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16 text-base max-w-xl mx-auto" style={{ color: "var(--brand-text-secondary)" }}>
+                        Three studios across the Pacific Northwest — pick the one closest to you.
+                    </motion.p>
+
+                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-3 gap-6">
+                        {[
+                            { city: "Bellevue", state: "WA", detail: "Eastside convenience with premium amenities" },
+                            { city: "Renton", state: "WA", detail: "South King County's creative hub" },
+                            { city: "Portland", state: "OR", detail: "Serving the Rose City and beyond" },
+                        ].map((loc, i) => (
+                            <motion.div key={i} variants={fadeUp} custom={i} className="p-8 rounded-2xl text-center transition-transform hover:-translate-y-1" style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}>
+                                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(212,132,90,0.1)" }}>
+                                    <MapPin size={24} style={{ color: "var(--brand-orange)" }} />
+                                </div>
+                                <h3 className="text-xl font-bold mb-1" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>{loc.city}, {loc.state}</h3>
+                                <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>{loc.detail}</p>
                             </motion.div>
                         ))}
                     </motion.div>
