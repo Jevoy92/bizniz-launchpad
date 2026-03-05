@@ -24,44 +24,55 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <>
             {/* ───── NAVBAR ───── */}
-            <nav className="fixed top-0 w-full z-50" style={{ background: "rgba(26,18,11,0.92)", backdropFilter: "blur(16px)" }}>
-                <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-                    <Link to="/" className="flex items-center gap-2 group">
-                        <img src="/logo-orange.png" alt="Logo" className="w-10 h-10 object-contain transition-transform group-hover:scale-110" />
-                        <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
+            <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
+                <div
+                    className="flex items-center justify-between h-14 px-4 md:px-5 rounded-full border"
+                    style={{
+                        background: "rgba(26,18,11,0.85)",
+                        backdropFilter: "blur(20px)",
+                        WebkitBackdropFilter: "blur(20px)",
+                        borderColor: "rgba(255,255,255,0.08)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)",
+                    }}
+                >
+                    <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
+                        <img src="/logo-orange.png" alt="Logo" className="w-8 h-8 object-contain transition-transform group-hover:scale-110" />
+                        <span className="text-white font-bold text-lg hidden sm:inline" style={{ fontFamily: "var(--font-heading)" }}>MYB</span>
                     </Link>
 
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex items-center gap-1 rounded-full px-1.5 py-1" style={{ background: "rgba(255,255,255,0.06)" }}>
                         {NAV_LINKS.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`text-sm transition-colors ${location.pathname === link.path
-                                        ? "text-white font-semibold"
-                                        : "text-white/70 hover:text-white"
-                                    }`}
+                                className="relative text-sm px-4 py-1.5 rounded-full transition-all duration-300"
+                                style={{
+                                    color: location.pathname === link.path ? "white" : "rgba(255,255,255,0.6)",
+                                    background: location.pathname === link.path ? "var(--brand-orange)" : "transparent",
+                                    fontWeight: location.pathname === link.path ? 600 : 400,
+                                }}
                             >
                                 {link.label}
                             </Link>
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-shrink-0">
                         <button
                             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            className="w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition"
+                            className="w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition"
                             aria-label="Toggle theme"
                         >
-                            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
                         </button>
-                        <Link to="/contact" className="hidden md:inline-flex brand-btn-primary text-xs py-1.5 px-4">
-                            Get in Touch <span className="brand-icon-circle w-5 h-5"><ArrowUpRight size={12} /></span>
+                        <Link to="/contact" className="hidden md:inline-flex items-center gap-1.5 text-xs font-medium py-1.5 px-4 rounded-full text-white transition-all hover:scale-105" style={{ background: "var(--brand-orange)" }}>
+                            Get in Touch <ArrowUpRight size={12} />
                         </Link>
                         <button
                             className="md:hidden text-white"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         >
-                            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
                         </button>
                     </div>
                 </div>
@@ -73,23 +84,30 @@ const Layout = ({ children }: LayoutProps) => {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
-                            className="md:hidden px-6 pb-6 pt-2"
-                            style={{ background: "rgba(26,18,11,0.98)" }}
+                            className="md:hidden mt-2 rounded-2xl px-5 pb-5 pt-3 border"
+                            style={{
+                                background: "rgba(26,18,11,0.97)",
+                                backdropFilter: "blur(20px)",
+                                borderColor: "rgba(255,255,255,0.08)",
+                                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                            }}
                         >
                             {NAV_LINKS.map((link) => (
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className={`block py-3 border-b border-white/10 ${location.pathname === link.path
-                                            ? "text-white font-semibold"
-                                            : "text-white/80 hover:text-white"
-                                        }`}
+                                    className="block py-2.5 text-sm rounded-lg px-3 my-0.5 transition-all"
+                                    style={{
+                                        color: location.pathname === link.path ? "white" : "rgba(255,255,255,0.7)",
+                                        background: location.pathname === link.path ? "var(--brand-orange)" : "transparent",
+                                        fontWeight: location.pathname === link.path ? 600 : 400,
+                                    }}
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {link.label}
                                 </Link>
                             ))}
-                            <Link to="/contact" className="brand-btn-primary mt-4 justify-center w-full text-sm py-3" onClick={() => setMobileMenuOpen(false)}>
+                            <Link to="/contact" className="flex items-center justify-center gap-2 mt-3 w-full text-sm py-2.5 rounded-full text-white font-medium" style={{ background: "var(--brand-orange)" }} onClick={() => setMobileMenuOpen(false)}>
                                 Get in Touch <ArrowUpRight size={14} />
                             </Link>
                         </motion.div>
