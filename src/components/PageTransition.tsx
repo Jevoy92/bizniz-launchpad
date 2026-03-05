@@ -43,8 +43,8 @@ const PageTransition = ({ children }: PageTransitionProps) => {
             {(phase === "cover" || phase === "reveal") && (
                 <motion.div
                     key={phase}
-                    initial={{ y: phase === "cover" ? "100%" : "0%" }}
-                    animate={{ y: phase === "cover" ? "0%" : "-100%" }}
+                    initial={{ y: phase === "cover" ? "-100%" : "0%" }}
+                    animate={{ y: phase === "cover" ? "0%" : "100%" }}
                     transition={{ duration: phase === "cover" ? 0.45 : 0.6, ease: [0.76, 0, 0.24, 1] }}
                     style={{ background: "var(--brand-dark)", zIndex: 9999 }}
                     className="fixed inset-0 pointer-events-none"
