@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MapPin, Globe, Send, Instagram, Youtube, Palette, Video, Gift } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Mail, MapPin, Globe, Instagram, Youtube, Palette, Video, Gift } from "lucide-react";
+import { useEffect } from "react";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -25,25 +25,25 @@ const SOCIALS = [
     { label: "YourBoyJevoy", handle: "yourboyjevoy.com", href: "https://www.yourboyjevoy.com", icon: Palette },
 ];
 
-const SERVICE_OPTIONS = [
-    "General Inquiry",
-    "Guest on the Podcast",
-    "Studio Booking — Space Only",
-    "Studio Booking — Production Partner",
-    "Studio Booking — Full Service",
-    "Business Collaboration",
-    "Other",
-];
+const HONEYBOOK_PID = "64f18afafb99b50197686f91";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({ name: "", email: "", service: "", message: "" });
+    useEffect(() => {
+        // Load HoneyBook widget script
+        if (!(window as any)._HB_) {
+            (window as any)._HB_ = {};
+        }
+        (window as any)._HB_.pid = HONEYBOOK_PID;
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // For now, show a simple alert; can be connected to a backend later
-        alert(`Thanks ${formData.name}! We'll be in touch soon.`);
-        setFormData({ name: "", email: "", service: "", message: "" });
-    };
+        const existing = document.querySelector(`script[src*="honeybook.com"]`);
+        if (!existing) {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async = true;
+            script.src = "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js";
+            document.body.appendChild(script);
+        }
+    }, []);
 
     return (
         <>
@@ -69,68 +69,15 @@ const Contact = () => {
             {/* ───── FORM + INFO ───── */}
             <section className="py-16 md:py-24" style={{ background: "var(--brand-bg)" }}>
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-                    {/* Contact Form */}
+                    {/* HoneyBook Form */}
                     <motion.div variants={stagger} initial="hidden" animate="visible">
                         <motion.h2 variants={fadeUp} custom={0} className="text-2xl font-bold mb-6" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>
                             Send a Message
                         </motion.h2>
-                        <form onSubmit={handleSubmit} className="space-y-5">
-                            <motion.div variants={fadeUp} custom={1}>
-                                <label className="block text-sm font-medium mb-2" style={{ color: "var(--brand-text-dark)" }}>Name</label>
-                                <input
-                                    type="text"
-                                    required
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-5 py-3 rounded-xl text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition"
-                                    style={{ borderColor: "var(--brand-border-light)", background: "white" }}
-                                    placeholder="Your name"
-                                />
-                            </motion.div>
-                            <motion.div variants={fadeUp} custom={2}>
-                                <label className="block text-sm font-medium mb-2" style={{ color: "var(--brand-text-dark)" }}>Email</label>
-                                <input
-                                    type="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-5 py-3 rounded-xl text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition"
-                                    style={{ borderColor: "var(--brand-border-light)", background: "white" }}
-                                    placeholder="you@example.com"
-                                />
-                            </motion.div>
-                            <motion.div variants={fadeUp} custom={3}>
-                                <label className="block text-sm font-medium mb-2" style={{ color: "var(--brand-text-dark)" }}>What are you interested in?</label>
-                                <select
-                                    value={formData.service}
-                                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                    className="w-full px-5 py-3 rounded-xl text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition appearance-none"
-                                    style={{ borderColor: "var(--brand-border-light)", background: "white", color: formData.service ? "var(--brand-text-dark)" : "var(--brand-text-gray)" }}
-                                >
-                                    <option value="">Select an option</option>
-                                    {SERVICE_OPTIONS.map((opt) => (
-                                        <option key={opt} value={opt}>{opt}</option>
-                                    ))}
-                                </select>
-                            </motion.div>
-                            <motion.div variants={fadeUp} custom={4}>
-                                <label className="block text-sm font-medium mb-2" style={{ color: "var(--brand-text-dark)" }}>Message</label>
-                                <textarea
-                                    required
-                                    rows={5}
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-5 py-3 rounded-xl text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition resize-none"
-                                    style={{ borderColor: "var(--brand-border-light)", background: "white" }}
-                                    placeholder="Tell me what's on your mind..."
-                                />
-                            </motion.div>
-                            <motion.div variants={fadeUp} custom={5}>
-                                <button type="submit" className="brand-btn-primary w-full justify-center">
-                                    Send Message <Send size={16} />
-                                </button>
-                            </motion.div>
-                        </form>
+                        <motion.div variants={fadeUp} custom={1}>
+                            <div className="hb-p-64f18afafb99b50197686f91-3"></div>
+                            <img height="1" width="1" style={{ display: "none" }} src="https://www.honeybook.com/p.png?pid=64f18afafb99b50197686f91" alt="" />
+                        </motion.div>
                     </motion.div>
 
                     {/* Info + Socials */}
