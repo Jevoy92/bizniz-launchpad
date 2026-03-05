@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Volume2, Film, Scissors, Monitor, Check, ChevronDown, MapPin } from "lucide-react";
+import { ArrowUpRight, Volume2, Film, Scissors, Monitor, Check, ChevronDown, MapPin, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -57,7 +57,11 @@ const Studio = () => {
                         <motion.p variants={fadeUp} custom={2} className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>
                             Whether you bring your own edit or want the full treatment, we&apos;ve got a studio package that fits your vision. Professional podcasting made simple.
                         </motion.p>
-                        <motion.div variants={fadeUp} custom={3} className="mt-8">
+                        <motion.div variants={fadeUp} custom={3} className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
+                            <Sparkles size={16} /> 1 Free Guest Spot Every Month —{" "}
+                            <Link to="/contact" className="underline font-semibold">Join the Waitlist</Link>
+                        </motion.div>
+                        <motion.div variants={fadeUp} custom={4} className="mt-6">
                             <a href="#packages" className="brand-btn-primary">
                                 View Packages <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                             </a>
@@ -126,9 +130,14 @@ const Studio = () => {
             {/* ───── PACKAGES ───── */}
             <section id="packages" className="py-20 md:py-28" style={{ background: "var(--brand-dark)" }}>
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-16">
+                    <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center text-white brand-section-heading mb-4">
                         Studio <span className="brand-underline">Packages</span>
                     </motion.h2>
+                    <motion.div variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex justify-center mb-16">
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
+                            <Sparkles size={16} /> 1 Free Guest Spot Every Month — <Link to="/contact" className="underline font-semibold">Join the Waitlist</Link>
+                        </div>
+                    </motion.div>
 
                     <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {PACKAGES.map((pkg, i) => (

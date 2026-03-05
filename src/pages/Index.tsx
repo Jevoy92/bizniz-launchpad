@@ -155,6 +155,14 @@ const Index = () => {
               >
                 🎬 Coming Soon: Cast on Daymond John&apos;s Next Level CEO — Inside Success TV
               </motion.div>
+              <motion.div
+                variants={fadeUp}
+                custom={1.7}
+                className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium"
+                style={{ background: "rgba(212,132,90,0.08)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.2)" }}
+              >
+                ✨ 1 Free Guest Spot Every Month — <a href="/contact" className="underline font-semibold">Join the Waitlist</a>
+              </motion.div>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
                 <motion.a
                   href="#episode"
