@@ -17,6 +17,9 @@ import {
   GraduationCap,
   ChevronRight,
   Star,
+  Instagram,
+  Youtube,
+  Globe,
 } from "lucide-react";
 import { useState, useCallback } from "react";
 import Preloader from "@/components/Preloader";
@@ -783,12 +786,12 @@ const Index = () => {
                     <p className="text-sm mt-1" style={{ color: "var(--brand-text-gray)" }}>{h.role}</p>
                     <div className="flex gap-2 mt-4">
                       {[
-                        { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
-                        { icon: "🎬", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
-                        { icon: "🌐", href: "https://www.jevoypalmer.com" },
+                        { icon: Instagram, href: "https://www.instagram.com/yourboyjevoy/" },
+                        { icon: Youtube, href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
+                        { icon: Globe, href: "https://www.jevoypalmer.com" },
                       ].map((social, j) => (
-                        <a key={j} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-xs">
-                          {social.icon}
+                        <a key={j} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer">
+                          <social.icon size={14} />
                         </a>
                       ))}
                     </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MapPin, Globe, Send } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Globe, Send, Instagram, Youtube, Palette, Video, Gift } from "lucide-react";
 import { useState } from "react";
 
 const fadeUp = {
@@ -17,12 +17,12 @@ const stagger = {
 };
 
 const SOCIALS = [
-    { label: "Instagram", handle: "@yourboyjevoy", href: "https://www.instagram.com/yourboyjevoy/", icon: "📷" },
-    { label: "YouTube", handle: "Mind Your Bizniz", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA", icon: "🎬" },
-    { label: "Patreon", handle: "yourboyjevoy", href: "https://www.patreon.com/yourboyjevoy", icon: "🎁" },
-    { label: "Website", handle: "jevoypalmer.com", href: "https://www.jevoypalmer.com", icon: "🌐" },
-    { label: "Palmer House", handle: "palmerhouseproductions.com", href: "https://www.palmerhouseproductions.com", icon: "🎥" },
-    { label: "YourBoyJevoy", handle: "yourboyjevoy.com", href: "https://www.yourboyjevoy.com", icon: "🎨" },
+    { label: "Instagram", handle: "@yourboyjevoy", href: "https://www.instagram.com/yourboyjevoy/", icon: Instagram },
+    { label: "YouTube", handle: "Mind Your Bizniz", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA", icon: Youtube },
+    { label: "Patreon", handle: "yourboyjevoy", href: "https://www.patreon.com/yourboyjevoy", icon: Gift },
+    { label: "Website", handle: "jevoypalmer.com", href: "https://www.jevoypalmer.com", icon: Globe },
+    { label: "Palmer House", handle: "palmerhouseproductions.com", href: "https://www.palmerhouseproductions.com", icon: Video },
+    { label: "YourBoyJevoy", handle: "yourboyjevoy.com", href: "https://www.yourboyjevoy.com", icon: Palette },
 ];
 
 const SERVICE_OPTIONS = [
@@ -192,7 +192,7 @@ const Contact = () => {
                                     className="flex items-center gap-3 p-4 rounded-xl transition-transform hover:-translate-y-1"
                                     style={{ background: "white", border: "1px solid var(--brand-border-light)" }}
                                 >
-                                    <span className="text-xl">{s.icon}</span>
+                                    <s.icon size={20} style={{ color: "var(--brand-orange)" }} />
                                     <div>
                                         <p className="text-sm font-medium" style={{ color: "var(--brand-text-dark)" }}>{s.label}</p>
                                         <p className="text-xs" style={{ color: "var(--brand-text-gray)" }}>{s.handle}</p>

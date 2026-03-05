@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Instagram, Youtube, Globe } from "lucide-react";
 import { useState, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -105,10 +105,9 @@ const Layout = ({ children }: LayoutProps) => {
                         <p className="text-white/50 text-sm mb-4">Follow the journey</p>
                         <div className="flex gap-3 mb-4">
                             {[
-                                { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
-                                { icon: "🎬", href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
-                                { icon: "🎁", href: "https://www.patreon.com/yourboyjevoy" },
-                                { icon: "🌐", href: "https://www.jevoypalmer.com" },
+                                { icon: Instagram, href: "https://www.instagram.com/yourboyjevoy/" },
+                                { icon: Youtube, href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
+                                { icon: Globe, href: "https://www.jevoypalmer.com" },
                             ].map((s, i) => (
                                 <a
                                     key={i}
@@ -117,7 +116,7 @@ const Layout = ({ children }: LayoutProps) => {
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-[var(--brand-orange)] hover:text-white transition"
                                 >
-                                    {s.icon}
+                                    <s.icon size={18} />
                                 </a>
                             ))}
                         </div>
