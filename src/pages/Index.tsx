@@ -17,8 +17,6 @@ import {
   GraduationCap,
   ChevronRight,
   Star,
-  Menu,
-  X,
 } from "lucide-react";
 import { useState, useCallback } from "react";
 import Preloader from "@/components/Preloader";
@@ -177,7 +175,6 @@ const BLOGS = [
 /* ─── COMPONENT ───────────────────────── */
 
 const Index = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -187,65 +184,6 @@ const Index = () => {
     <>
       {loading && <Preloader onComplete={handlePreloaderComplete} />}
       <div className="min-h-screen overflow-x-hidden" style={{ background: "var(--brand-light)" }}>
-        {/* ───── NAVBAR ───── */}
-        <nav
-          className="fixed top-0 left-0 w-full z-50 backdrop-blur-md"
-          style={{ background: "rgba(26,18,11,0.92)" }}
-        >
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-            <a href="#" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-white/10 group-hover:scale-110">
-                <img src="/logo-orange.png" alt="Logo" className="w-7 h-7 object-contain" />
-              </div>
-              <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
-            </a>
-
-            {/* Desktop links */}
-            <div className="hidden md:flex items-center gap-8">
-              {["Home", "Episode", "Host", "About us", "Contact", "Blog"].map((l) => (
-                <a key={l} href={`#${l.toLowerCase().replace(/\s/g, "")}`} className="text-sm text-white/70 hover:text-white transition">
-                  {l}
-                </a>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-3">
-              <a href="#newsletter" className="hidden md:inline-flex brand-btn-primary text-sm py-2 px-5">
-                Get in Touch <span className="brand-icon-circle w-6 h-6 text-xs"><ArrowUpRight size={14} /></span>
-              </a>
-              <button
-                className="md:hidden text-white"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile menu */}
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="md:hidden px-6 pb-6 pt-2"
-              style={{ background: "rgba(26,18,11,0.98)" }}
-            >
-              {["Home", "Episode", "Host", "About us", "Contact", "Blog"].map((l) => (
-                <a
-                  key={l}
-                  href={`#${l.toLowerCase().replace(/\s/g, "")}`}
-                  className="block py-3 text-white/80 hover:text-white border-b border-white/10"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {l}
-                </a>
-              ))}
-              <a href="#newsletter" className="brand-btn-primary mt-4 justify-center w-full text-sm py-3">
-                Get in Touch <ArrowUpRight size={14} />
-              </a>
-            </motion.div>
-          )}
-        </nav>
 
         {/* ───── HERO ───── */}
         <section
@@ -1008,64 +946,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ───── FOOTER ───── */}
-        <footer style={{ background: "var(--brand-dark)" }} className="pt-16 pb-8">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-              {/* Brand */}
-              <div className="col-span-2 md:col-span-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/10">
-                    <img src="/logo-orange.png" alt="Logo" className="w-7 h-7 object-contain" />
-                  </div>
-                  <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
-                </div>
-                <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>Follow the journey</p>
-                <div className="flex gap-3 mt-3">
-                  {[
-                    { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
-                    { icon: "🎬", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/" },
-                    { icon: "🎨", href: "https://www.patreon.com/c/yourboyjevoy" },
-                    { icon: "🌐", href: "https://www.jevoypalmer.com" },
-                  ].map((social, i) => (
-                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-sm">
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-                <div className="mt-4 space-y-2 text-sm" style={{ color: "var(--brand-text-gray)" }}>
-                  <p>hello@mindyourbizniz.co</p>
-                  <p>Seattle, Washington</p>
-                </div>
-              </div>
-
-              {/* Links */}
-              {[
-                { title: "Company", links: ["About Jevoy", "Palmer House Productions", "Newsletter", "Blog"] },
-                { title: "Quick Links", links: ["Home", "Episodes", "Studio Packages"] },
-                { title: "Useful Links", links: ["Contact", "Privacy Policy", "Terms & Conditions"] },
-                { title: "Listen on", links: ["Spotify", "Apple Podcasts", "YouTube", "RSS Feed"] },
-              ].map((col) => (
-                <div key={col.title}>
-                  <h4 className="text-white font-semibold text-sm mb-4" style={{ fontFamily: "var(--font-heading)" }}>{col.title}</h4>
-                  <ul className="space-y-2">
-                    {col.links.map((link) => (
-                      <li key={link}>
-                        <a href="#" className="text-sm hover:text-[var(--brand-orange)] transition" style={{ color: "var(--brand-text-gray)" }}>
-                          {link}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className="border-t pt-6 text-center text-sm" style={{ borderColor: "rgba(255,255,255,0.08)", color: "var(--brand-text-gray)" }}>
-              © 2025 Mind Your Bizniz. A Jevoy Palmer Production. All rights reserved.
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   );
@@ -1073,4 +953,3 @@ const Index = () => {
 
 
 export default Index;
-
