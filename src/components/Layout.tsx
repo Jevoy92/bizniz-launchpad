@@ -36,7 +36,8 @@ const Layout = ({ children }: LayoutProps) => {
         <>
             {/* ───── NAVBAR ───── */}
             <motion.nav
-                className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl"
+                className="fixed top-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl"
+                style={{ x: "-50%" }}
                 animate={{ y: navVisible ? 0 : -100, opacity: navVisible ? 1 : 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
