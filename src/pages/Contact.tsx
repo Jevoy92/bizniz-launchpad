@@ -77,6 +77,12 @@ const Contact = () => {
                         <motion.div variants={fadeUp} custom={1}>
                             <div className="hb-p-64f18afafb99b50197686f91-3"></div>
                             <img height="1" width="1" style={{ display: "none" }} src="https://www.honeybook.com/p.png?pid=64f18afafb99b50197686f91" alt="" />
+                            <p className="mt-4 text-sm" style={{ color: "var(--brand-text-gray)" }}>
+                                Having trouble with the form?{" "}
+                                <a href="https://www.honeybook.com/widget/palmer_house_productions_297353/cf_id/69a8e6bfcbad18003b2076b9" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--brand-orange)" }}>
+                                    Click here to reach out directly
+                                </a>.
+                            </p>
                         </motion.div>
                     </motion.div>
 
