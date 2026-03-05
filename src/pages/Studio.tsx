@@ -161,7 +161,7 @@ const Studio = () => {
                                 </div>
                                 <div className="mt-auto">
                                     <p className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>{pkg.price}<span className="text-base font-normal text-white/50">{pkg.period}</span></p>
-                                    <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline"}`}>
+                                    <Link to="/contact" className={`w-full justify-center ${pkg.popular ? "brand-btn-primary" : "brand-btn-outline-on-dark"}`}>
                                         Book a Session <span className="brand-icon-circle w-6 h-6"><ArrowUpRight size={14} /></span>
                                     </Link>
                                 </div>

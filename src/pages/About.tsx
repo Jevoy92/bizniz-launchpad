@@ -64,7 +64,7 @@ const About = () => {
                                 <a href="https://www.jevoypalmer.com" target="_blank" rel="noopener noreferrer" className="brand-btn-primary">
                                     JevoyPalmer.com <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                                 </a>
-                                <a href="https://www.palmerhouseproductions.com" target="_blank" rel="noopener noreferrer" className="brand-btn-outline">
+                                <a href="https://www.palmerhouseproductions.com" target="_blank" rel="noopener noreferrer" className="brand-btn-outline-on-dark">
                                     Palmer House <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
                                 </a>
                             </motion.div>
