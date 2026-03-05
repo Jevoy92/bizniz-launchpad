@@ -18,10 +18,10 @@ const stagger = {
 };
 
 const PACKAGES = [
-    { name: "Space Only", price: "$150", period: "/session", desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.", features: ["Studio rental access", "Professional equipment", "Raw file delivery", "Flexible scheduling", "Sound-treated room"], popular: false },
-    { name: "Production Partner", price: "$450", period: "/session", desc: "We film your session and our team handles editing, sound mixing, and color grading.", features: ["Everything in Space Only", "Professional filming", "Sound mixing & color grading", "2 rounds of revisions", "Delivery within 7 days"], popular: true },
-    { name: "Full Service", price: "$750", period: "/session", desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.", features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports", "YouTube optimization", "Unlimited revisions"], popular: false },
-    { name: "Online Appearance", price: "$200", period: "/session", desc: "Record remotely with professional-grade quality. We handle the tech so you can focus on the conversation.", features: ["Remote recording setup", "Professional audio optimization", "Screen & camera capture", "Post-production editing", "Delivery within 5 days"], popular: false },
+    { name: "Space Only", price: "$150", period: "/hr", desc: "Book the studio, bring your vision, and walk away with raw files to edit on your own.", features: ["Studio rental access", "Professional equipment", "Raw file delivery", "Flexible scheduling", "Sound-treated room"], popular: false },
+    { name: "Production Partner", price: "$450", period: "/hr", desc: "We film your session and our team handles editing, sound mixing, and color grading.", features: ["Everything in Space Only", "Professional filming", "Sound mixing & color grading", "2 rounds of revisions", "Delivery within 7 days"], popular: true },
+    { name: "Full Service", price: "$750", period: "/hr", desc: "We handle everything — filming, editing, sound, thumbnails, social cuts, and distribution-ready exports.", features: ["Everything in Production Partner", "Custom thumbnails & social cuts", "Distribution-ready exports", "YouTube optimization", "Unlimited revisions"], popular: false },
+    { name: "Online Appearance", price: "$200", period: "/hr", desc: "Record remotely with professional-grade quality. We handle the tech so you can focus on the conversation.", features: ["Remote recording setup", "Professional audio optimization", "Screen & camera capture", "Post-production editing", "Delivery within 5 days"], popular: false },
 ];
 
 const PROCESS = [
