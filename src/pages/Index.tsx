@@ -463,7 +463,7 @@ const Index = () => {
               <motion.div variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative flex justify-center">
                 <div className="relative">
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden mx-auto" style={{ background: "rgba(212,132,90,0.15)" }}>
-                    <img src="/hero-person.png" alt="Features" className="w-full h-full object-cover" />
+                    <img src="/img-interview.png" alt="Features" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute bottom-4 left-0 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 text-sm" style={{ background: "var(--brand-surface-elevated)" }}>
                     <div className="flex -space-x-1">
