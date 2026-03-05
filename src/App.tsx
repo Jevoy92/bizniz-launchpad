@@ -22,19 +22,18 @@ const queryClient = new QueryClient();
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
-    <Layout>
-      <AnimatePresence mode="wait">
+    <PageTransition>
+      <Layout>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Index /></PageTransition>} />
-          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-          <Route path="/episodes" element={<PageTransition><Episodes /></PageTransition>} />
-          <Route path="/studio" element={<PageTransition><Studio /></PageTransition>} />
-          
-          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </AnimatePresence>
-    </Layout>
+      </Layout>
+    </PageTransition>
   );
 };
 
