@@ -18,7 +18,7 @@ const stagger = {
 const VENTURES = [
     { name: "Palmer House Productions", desc: "Cinematic video production agency helping founders capture their story and knowledge through video.", href: "https://www.palmerhouseproductions.com", icon: Film, img: "/img-production.png" },
     { name: "YourBoyJevoy", desc: "A creative laboratory where music, photography, short films, and reflective storytelling coexist without commercial constraints.", href: "https://www.yourboyjevoy.com", icon: Lightbulb, img: "/img-workspace.png" },
-    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://www.besetlld.com", icon: Heart, img: "/img-storytelling.png" },
+    { name: "beSettld", desc: "Lifestyle support for seniors, disabled adults, and busy professionals — exploring how thoughtful systems can improve everyday life.", href: "https://besettld.com", icon: Heart, img: "/img-storytelling.png" },
 ];
 
 const PHILOSOPHY = [
