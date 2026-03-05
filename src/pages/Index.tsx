@@ -95,7 +95,7 @@ const Index = () => {
         <section
           id="home"
           className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden"
-          style={{ background: "var(--brand-dark)" }}
+          style={{ background: "var(--brand-surface-accent)" }}
         >
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
             {/* Left */}
@@ -103,8 +103,8 @@ const Index = () => {
               <motion.h1
                 variants={fadeUp}
                 custom={0}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                style={{ fontFamily: "var(--font-heading)" }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                style={{ fontFamily: "var(--font-heading)", color: "var(--brand-text-accent)" }}
               >
                 Turn Ideas Into{" "}
                 <span className="relative inline-block">
@@ -129,7 +129,7 @@ const Index = () => {
                 </span>
                 , Dreams Into Reality
               </motion.h1>
-              <motion.p variants={fadeUp} custom={1} className="mt-5 text-base md:text-lg" style={{ color: "var(--brand-text-secondary)" }}>
+              <motion.p variants={fadeUp} custom={1} className="mt-5 text-base md:text-lg" style={{ color: "var(--brand-text-accent-secondary)" }}>
                 Real conversations about entrepreneurship, creativity, and what it takes to build something from nothing. Hosted by Jevoy Palmer.
               </motion.p>
               <motion.div
@@ -165,7 +165,7 @@ const Index = () => {
                   {[1, 2, 3].map((i) => (
                     <motion.div
                       key={i}
-                      className="w-10 h-10 rounded-full border-2 border-[var(--brand-dark)] overflow-hidden"
+                      className="w-10 h-10 rounded-full border-2 border-[var(--brand-surface-accent)] overflow-hidden"
                       initial={{ opacity: 0, x: -10 }}
                       animate={!loading ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
@@ -175,8 +175,8 @@ const Index = () => {
                   ))}
                 </div>
                 <div>
-                  <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>Growing Fast</span>
-                  <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Engaged Community</p>
+                  <span className="font-bold text-lg" style={{ color: "var(--brand-text-accent)", fontFamily: "var(--font-heading)" }}>Growing Fast</span>
+                  <p className="text-sm" style={{ color: "var(--brand-text-accent-secondary)" }}>Engaged Community</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -254,7 +254,7 @@ const Index = () => {
 
                 {/* Decorative doodle */}
                 <motion.svg
-                  className="absolute -top-8 left-1/3 w-10 h-10 text-white/60"
+                  className="absolute -top-8 left-1/3 w-10 h-10" style={{ color: "var(--brand-text-accent-secondary)" }}
                   viewBox="0 0 40 40"
                   fill="none"
                   stroke="currentColor"
@@ -388,10 +388,10 @@ const Index = () => {
         </section>
 
         {/* ───── CATEGORIES ───── */}
-        <section className="py-20 md:py-28" style={{ background: "var(--brand-dark)" }}>
+        <section className="py-20 md:py-28" style={{ background: "var(--brand-surface-accent)" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white brand-section-heading">
+              <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl lg:text-5xl font-bold brand-section-heading" style={{ color: "var(--brand-text-accent)" }}>
                 Discover Podcasts That
                 <br /> Match Your <span className="brand-underline">Mood</span>!
               </motion.h2>
@@ -404,24 +404,24 @@ const Index = () => {
               {CATEGORIES.map((cat, i) => {
                 const Icon = cat.icon;
                 return (
-                  <motion.div key={i} variants={fadeUp} custom={i} className={`brand-card-category ${cat.wide ? "sm:col-span-2" : ""}`}>
+                  <motion.div key={i} variants={fadeUp} custom={i} className={`rounded-[1.25rem] p-8 transition-all cursor-pointer ${cat.wide ? "sm:col-span-2" : ""}`} style={{ background: "var(--brand-surface-accent-card)", border: "1px solid var(--brand-border-accent)" }}>
                     <div className="flex items-start justify-between mb-10">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,132,90,0.15)" }}>
                         <Icon size={22} style={{ color: "var(--brand-orange)" }} />
                       </div>
-                      <ArrowUpRight size={20} style={{ color: "var(--brand-text-secondary)" }} />
+                      <ArrowUpRight size={20} style={{ color: "var(--brand-text-accent-secondary)" }} />
                     </div>
-                    <h3 className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>{cat.name}</h3>
-                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-secondary)" }}>{cat.episodes}</p>
+                    <h3 className="font-bold text-lg" style={{ color: "var(--brand-text-accent)", fontFamily: "var(--font-heading)" }}>{cat.name}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-accent-secondary)" }}>{cat.episodes}</p>
                     <div className="mt-4 flex items-center gap-2">
                       <div className="flex -space-x-2">
                         {[1, 2, 3].map((j) => (
-                          <div key={j} className="w-7 h-7 rounded-full border-2 border-[var(--brand-dark-card)] overflow-hidden">
+                          <div key={j} className="w-7 h-7 rounded-full border-2 overflow-hidden" style={{ borderColor: "var(--brand-surface-accent-card)" }}>
                             <img src={`/episode-${j}.png`} alt="" className="w-full h-full object-cover" />
                           </div>
                         ))}
                       </div>
-                      <span className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>Growing Community</span>
+                      <span className="text-sm" style={{ color: "var(--brand-text-accent-secondary)" }}>Growing Community</span>
                     </div>
                   </motion.div>
                 );
@@ -542,29 +542,29 @@ const Index = () => {
         </section>
 
         {/* ───── HOSTS ───── */}
-        <section id="host" className="py-20 md:py-28" style={{ background: "var(--brand-dark)" }}>
+        <section id="host" className="py-20 md:py-28" style={{ background: "var(--brand-surface-accent)" }}>
           <div className="max-w-7xl mx-auto px-6">
-            <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white brand-section-heading">
+            <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-center brand-section-heading" style={{ color: "var(--brand-text-accent)" }}>
               Meet Your <span className="brand-underline">Host</span>
               <br className="hidden sm:block" /> The Voice Behind the Mic
             </motion.h2>
 
             <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-14 flex justify-center">
               {HOSTS.map((h, i) => (
-                <motion.div key={i} variants={fadeUp} custom={i} className="flex items-center gap-8 max-w-lg w-full rounded-3xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
+                <motion.div key={i} variants={fadeUp} custom={i} className="flex items-center gap-8 max-w-lg w-full rounded-3xl p-6" style={{ background: "var(--brand-surface-accent-card)", border: "1px solid var(--brand-border-accent)" }}>
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden flex-shrink-0" style={{ border: "3px solid var(--brand-orange)" }}>
                     <img src={h.img} alt={h.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>{h.name}</h3>
-                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-secondary)" }}>{h.role}</p>
+                    <h3 className="font-bold text-xl" style={{ color: "var(--brand-text-accent)", fontFamily: "var(--font-heading)" }}>{h.name}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-accent-secondary)" }}>{h.role}</p>
                     <div className="flex gap-2 mt-4">
                       {[
                         { icon: Instagram, href: "https://www.instagram.com/yourboyjevoy/" },
                         { icon: Youtube, href: "https://www.youtube.com/channel/UCIooy5oeRT1FFYSWr9KbneA" },
                         { icon: Globe, href: "https://www.jevoypalmer.com" },
                       ].map((social, j) => (
-                        <a key={j} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer">
+                        <a key={j} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer" style={{ border: "1px solid var(--brand-border-accent)", color: "var(--brand-text-accent-secondary)" }}>
                           <social.icon size={14} />
                         </a>
                       ))}

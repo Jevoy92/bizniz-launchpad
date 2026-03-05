@@ -65,6 +65,14 @@
     /* Overlay for stats/subtle bg */
     --brand-surface-muted: rgba(0, 0, 0, 0.03);
 
+    /* Accent sections (hero, categories, hosts) — INVERT with theme */
+    --brand-surface-accent: #f5f0eb;
+    --brand-surface-accent-card: #ebe5dd;
+    --brand-surface-accent-card-hover: #e0d8ce;
+    --brand-text-accent: #1a120b;
+    --brand-text-accent-secondary: #6b6058;
+    --brand-border-accent: rgba(0, 0, 0, 0.1);
+
     /* Legacy aliases — keep for backwards compat during migration */
     --brand-light: #ffffff;
     --brand-light-card: #ffffff;
@@ -138,6 +146,14 @@
 
     /* Overlay for stats/subtle bg */
     --brand-surface-muted: rgba(255, 255, 255, 0.04);
+
+    /* Accent sections (hero, categories, hosts) — dark in dark mode */
+    --brand-surface-accent: #1a120b;
+    --brand-surface-accent-card: #2a1f14;
+    --brand-surface-accent-card-hover: #352718;
+    --brand-text-accent: #ffffff;
+    --brand-text-accent-secondary: #a09890;
+    --brand-border-accent: rgba(255, 255, 255, 0.1);
 
     /* Legacy aliases — dark mode */
     --brand-light: #1a120b;
@@ -240,8 +256,8 @@
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--brand-text-accent);
+    border: 1px solid var(--brand-border-accent);
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.9rem;
