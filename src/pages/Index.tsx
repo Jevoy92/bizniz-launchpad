@@ -211,7 +211,7 @@ const Index = () => {
 
             <div className="flex items-center gap-3">
               <a href="#newsletter" className="hidden md:inline-flex brand-btn-primary text-sm py-2 px-5">
-                Subscribe <span className="brand-icon-circle w-6 h-6 text-xs"><ArrowUpRight size={14} /></span>
+                Get in Touch <span className="brand-icon-circle w-6 h-6 text-xs"><ArrowUpRight size={14} /></span>
               </a>
               <button
                 className="md:hidden text-white"
@@ -241,7 +241,7 @@ const Index = () => {
                 </a>
               ))}
               <a href="#newsletter" className="brand-btn-primary mt-4 justify-center w-full text-sm py-3">
-                Subscribe <ArrowUpRight size={14} />
+                Get in Touch <ArrowUpRight size={14} />
               </a>
             </motion.div>
           )}
@@ -512,7 +512,7 @@ const Index = () => {
               <div className="grid grid-cols-3 gap-6 text-center">
                 {[
                   { val: "Quality", label: "Episodes Released" },
-                  { val: "Global", label: "Subscriber Base" },
+                  { val: "Global", label: "Community" },
                   { val: "Worldwide", label: "Engaged Listeners" },
                 ].map((s) => (
                   <div key={s.label}>
@@ -771,24 +771,26 @@ const Index = () => {
               className="mt-14 flex justify-center"
             >
               {HOSTS.map((h, i) => (
-                <motion.div key={i} variants={fadeUp} custom={i} className="brand-card-host group">
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden" style={{ border: "1px solid var(--brand-border-dark)" }}>
+                <motion.div key={i} variants={fadeUp} custom={i} className="flex items-center gap-8 max-w-lg w-full rounded-3xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--brand-border-dark)" }}>
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden flex-shrink-0" style={{ border: "3px solid var(--brand-orange)" }}>
                     <img
                       src={h.img}
                       alt={h.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="mt-4 flex items-end justify-between">
-                    <div>
-                      <h3 className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>{h.name}</h3>
-                      <p className="text-sm" style={{ color: "var(--brand-text-gray)" }}>{h.role}</p>
-                    </div>
-                    <div className="flex gap-2">
-                      {["𝕏", "📷", "🧵"].map((icon, j) => (
-                        <div key={j} className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-xs">
-                          {icon}
-                        </div>
+                  <div>
+                    <h3 className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>{h.name}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--brand-text-gray)" }}>{h.role}</p>
+                    <div className="flex gap-2 mt-4">
+                      {[
+                        { icon: "📷", href: "https://www.instagram.com/yourboyjevoy/" },
+                        { icon: "🎬", href: "https://www.youtube.com/channel/UC05StWwLmKgw-XeaZGkWkSg/" },
+                        { icon: "🌐", href: "https://www.jevoypalmer.com" },
+                      ].map((social, j) => (
+                        <a key={j} href={social.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)] transition cursor-pointer text-xs">
+                          {social.icon}
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -969,7 +971,7 @@ const Index = () => {
                     className="flex-1 px-5 py-3 rounded-full text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition"
                     style={{ borderColor: "var(--brand-border-light)", background: "white" }}
                   />
-                  <button className="brand-btn-primary px-6">Subscribe</button>
+                  <button className="brand-btn-primary px-6">Join</button>
                 </motion.div>
               </motion.div>
 
