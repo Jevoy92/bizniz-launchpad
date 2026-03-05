@@ -39,19 +39,40 @@
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Brand custom */
+    /* ── Brand tokens (LIGHT) ── */
     --brand-dark: #1a120b;
     --brand-dark-card: #2a1f14;
     --brand-dark-card-hover: #352718;
     --brand-orange: #d4845a;
     --brand-orange-bright: #e8956a;
+
+    /* Surface colors — used for page backgrounds & cards */
+    --brand-surface: #ffffff;
+    --brand-surface-alt: #f9f7f5;
+    --brand-surface-card: #ffffff;
+    --brand-surface-elevated: #ffffff;
+    --brand-surface-input: #ffffff;
+
+    /* Text colors */
+    --brand-text-primary: #1a120b;
+    --brand-text-secondary: #a09890;
+    --brand-text-on-dark: #ffffff;
+
+    /* Border colors */
+    --brand-border: rgba(0, 0, 0, 0.08);
+    --brand-border-dark: rgba(255, 255, 255, 0.1);
+
+    /* Overlay for stats/subtle bg */
+    --brand-surface-muted: rgba(0, 0, 0, 0.03);
+
+    /* Legacy aliases — keep for backwards compat during migration */
     --brand-light: #ffffff;
     --brand-light-card: #ffffff;
     --brand-text-white: #ffffff;
     --brand-text-gray: #a09890;
     --brand-text-dark: #1a120b;
     --brand-border-light: rgba(0, 0, 0, 0.08);
-    --brand-border-dark: rgba(255, 255, 255, 0.1);
+    --brand-bg: #ffffff;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 20 10% 15%;
@@ -92,18 +113,40 @@
     --input: 20 10% 18%;
     --ring: 24 70% 50%;
 
+    /* ── Brand tokens (DARK) ── */
     --brand-dark: #1a120b;
     --brand-dark-card: #2a1f14;
     --brand-dark-card-hover: #352718;
     --brand-orange: #d4845a;
     --brand-orange-bright: #e8956a;
+
+    /* Surface colors — dark mode */
+    --brand-surface: #1a120b;
+    --brand-surface-alt: #1f1610;
+    --brand-surface-card: #2a1f14;
+    --brand-surface-elevated: #2a1f14;
+    --brand-surface-input: #2a1f14;
+
+    /* Text colors — dark mode */
+    --brand-text-primary: #f5f0eb;
+    --brand-text-secondary: #a09890;
+    --brand-text-on-dark: #ffffff;
+
+    /* Border colors — dark mode */
+    --brand-border: rgba(255, 255, 255, 0.08);
+    --brand-border-dark: rgba(255, 255, 255, 0.1);
+
+    /* Overlay for stats/subtle bg */
+    --brand-surface-muted: rgba(255, 255, 255, 0.04);
+
+    /* Legacy aliases — dark mode */
     --brand-light: #1a120b;
     --brand-light-card: #2a1f14;
     --brand-text-white: #ffffff;
     --brand-text-gray: #a09890;
     --brand-text-dark: #f5f0eb;
     --brand-border-light: rgba(255, 255, 255, 0.08);
-    --brand-border-dark: rgba(255, 255, 255, 0.1);
+    --brand-bg: #1a120b;
 
     --sidebar-background: 20 20% 7%;
     --sidebar-foreground: 30 15% 90%;
@@ -124,6 +167,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1,
@@ -217,8 +261,8 @@
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: var(--brand-text-dark);
-    border: 1px solid var(--brand-border-light);
+    color: var(--brand-text-primary);
+    border: 1px solid var(--brand-border);
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.9rem;
@@ -251,8 +295,8 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 9999px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    color: var(--brand-text-dark);
+    border: 1px solid var(--brand-border);
+    color: var(--brand-text-primary);
     flex-shrink: 0;
     transition: all 0.3s ease;
   }
@@ -269,8 +313,8 @@
   }
 
   .brand-card-episode {
-    background: var(--brand-light-card);
-    border: 1px solid var(--brand-border-light);
+    background: var(--brand-surface-card);
+    border: 1px solid var(--brand-border);
     border-radius: 1.25rem;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -298,8 +342,8 @@
   }
 
   .brand-card-feature {
-    background: var(--brand-light-card);
-    border: 1px solid var(--brand-border-light);
+    background: var(--brand-surface-card);
+    border: 1px solid var(--brand-border);
     border-radius: 1.25rem;
     padding: 2rem;
     transition: all 0.3s ease;
@@ -311,8 +355,8 @@
   }
 
   .brand-card-pricing {
-    background: var(--brand-light-card);
-    border: 1px solid var(--brand-border-light);
+    background: var(--brand-surface-card);
+    border: 1px solid var(--brand-border);
     border-radius: 1.25rem;
     padding: 2rem;
     transition: all 0.3s ease;
@@ -324,7 +368,7 @@
   }
 
   .brand-card-pricing-featured {
-    background: var(--brand-light-card);
+    background: var(--brand-surface-card);
     border: 2px solid var(--brand-orange);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -365,8 +409,8 @@
   }
 
   .brand-testimonial-card {
-    background: var(--brand-light-card);
-    border: 1px solid var(--brand-border-light);
+    background: var(--brand-surface-card);
+    border: 1px solid var(--brand-border);
     border-radius: 1.25rem;
     padding: 2rem;
     transition: all 0.3s ease;

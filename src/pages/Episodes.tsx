@@ -47,37 +47,31 @@ const Episodes = () => {
                     <motion.p variants={fadeUp} custom={0} initial="hidden" animate="visible" className="text-sm font-medium mb-4" style={{ color: "var(--brand-orange)" }}>
                         LISTEN & LEARN
                     </motion.p>
-                    <motion.h1
-                        variants={fadeUp} custom={1} initial="hidden" animate="visible"
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                    >
+                    <motion.h1 variants={fadeUp} custom={1} initial="hidden" animate="visible" className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
                         All <span className="brand-underline">Episodes</span>
                     </motion.h1>
-                    <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible" className="mt-4 text-base md:text-lg max-w-2xl" style={{ color: "var(--brand-text-gray)" }}>
+                    <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible" className="mt-4 text-base md:text-lg max-w-2xl" style={{ color: "var(--brand-text-secondary)" }}>
                         Real conversations about entrepreneurship, creativity, and what it takes to build something from nothing.
                     </motion.p>
                 </div>
             </section>
 
             {/* ───── FILTERS ───── */}
-            <section className="py-10" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-10" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-                        {/* Search */}
                         <div className="relative w-full md:w-80">
-                            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "var(--brand-text-gray)" }} />
+                            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "var(--brand-text-secondary)" }} />
                             <input
                                 type="text"
                                 placeholder="Search episodes..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="w-full pl-11 pr-4 py-3 rounded-full text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition"
-                                style={{ borderColor: "var(--brand-border-light)", background: "white" }}
+                                style={{ borderColor: "var(--brand-border)", background: "var(--brand-surface-input)", color: "var(--brand-text-primary)" }}
                             />
                         </div>
 
-                        {/* Category tabs */}
                         <div className="flex flex-wrap gap-2">
                             {CATEGORIES.map((cat) => (
                                 <button
@@ -85,11 +79,12 @@ const Episodes = () => {
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-4 py-2 rounded-full text-sm font-medium transition ${activeCategory === cat
                                             ? "text-white"
-                                            : "text-[var(--brand-text-gray)] hover:text-[var(--brand-text-dark)]"
+                                            : ""
                                         }`}
                                     style={{
-                                        background: activeCategory === cat ? "var(--brand-orange)" : "white",
-                                        border: `1px solid ${activeCategory === cat ? "var(--brand-orange)" : "var(--brand-border-light)"}`,
+                                        background: activeCategory === cat ? "var(--brand-orange)" : "var(--brand-surface-card)",
+                                        border: `1px solid ${activeCategory === cat ? "var(--brand-orange)" : "var(--brand-border)"}`,
+                                        color: activeCategory === cat ? "white" : "var(--brand-text-secondary)",
                                     }}
                                 >
                                     {cat}
@@ -101,7 +96,7 @@ const Episodes = () => {
             </section>
 
             {/* ───── EPISODE GRID ───── */}
-            <section className="py-10 pb-20" style={{ background: "var(--brand-bg)" }}>
+            <section className="py-10 pb-20" style={{ background: "var(--brand-surface)" }}>
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div variants={stagger} initial="hidden" animate="visible" className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {filtered.map((ep, i) => (
@@ -110,14 +105,10 @@ const Episodes = () => {
                                 variants={fadeUp}
                                 custom={i}
                                 className="group rounded-2xl overflow-hidden transition-transform hover:-translate-y-1"
-                                style={{ background: "white", border: "1px solid var(--brand-border-light)" }}
+                                style={{ background: "var(--brand-surface-card)", border: "1px solid var(--brand-border)" }}
                             >
                                 <div className="relative aspect-[4/3] overflow-hidden">
-                                    <img
-                                        src={ep.img}
-                                        alt={ep.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
+                                    <img src={ep.img} alt={ep.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                     {ep.badge && (
                                         <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium text-white" style={{ background: "var(--brand-orange)" }}>
                                             {ep.badge}
@@ -134,13 +125,13 @@ const Episodes = () => {
                                         <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: "rgba(212,132,90,0.1)", color: "var(--brand-orange)" }}>
                                             {ep.category}
                                         </span>
-                                        <span className="text-xs flex items-center gap-1" style={{ color: "var(--brand-text-gray)" }}>
+                                        <span className="text-xs flex items-center gap-1" style={{ color: "var(--brand-text-secondary)" }}>
                                             <Clock size={12} /> {ep.duration}
                                         </span>
                                     </div>
-                                    <h3 className="font-bold text-base mb-2" style={{ color: "var(--brand-text-dark)", fontFamily: "var(--font-heading)" }}>{ep.title}</h3>
-                                    <p className="text-sm line-clamp-2" style={{ color: "var(--brand-text-gray)" }}>{ep.desc}</p>
-                                    <p className="mt-3 text-xs font-medium" style={{ color: "var(--brand-text-dark)" }}>By {ep.host}</p>
+                                    <h3 className="font-bold text-base mb-2" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>{ep.title}</h3>
+                                    <p className="text-sm line-clamp-2" style={{ color: "var(--brand-text-secondary)" }}>{ep.desc}</p>
+                                    <p className="mt-3 text-xs font-medium" style={{ color: "var(--brand-text-primary)" }}>By {ep.host}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -148,7 +139,7 @@ const Episodes = () => {
 
                     {filtered.length === 0 && (
                         <div className="text-center py-20">
-                            <p className="text-lg" style={{ color: "var(--brand-text-gray)" }}>No episodes found matching your search.</p>
+                            <p className="text-lg" style={{ color: "var(--brand-text-secondary)" }}>No episodes found matching your search.</p>
                         </div>
                     )}
                 </div>
