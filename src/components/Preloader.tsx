@@ -152,24 +152,35 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                             />
                         </div>
                         <motion.div
-                            className="text-center mt-4 h-8 flex items-center justify-center overflow-hidden"
+                            className="mt-4 flex items-center justify-center gap-3 flex-wrap"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <AnimatePresence mode="wait">
-                                <motion.p
-                                    key={progress < 100 ? WORDS[wordIdx] : "ready"}
-                                    className="text-sm tracking-[0.2em] uppercase font-medium"
-                                    style={{ color: progress < 100 ? "var(--brand-orange)" : "#fff" }}
-                                    initial={{ opacity: 0, y: 16 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -16 }}
-                                    transition={{ duration: 0.25 }}
+                            {progress < 100 ? WORDS.map((word, i) => (
+                                <motion.span
+                                    key={word}
+                                    className="text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300"
+                                    style={{
+                                        color: i === wordIdx ? "var(--brand-orange)" : "rgba(255,255,255,0.2)",
+                                        textShadow: i === wordIdx ? "0 0 12px rgba(212,132,90,0.4)" : "none",
+                                    }}
+                                    animate={{
+                                        scale: i === wordIdx ? 1.15 : 1,
+                                    }}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    {progress < 100 ? WORDS[wordIdx] : "Ready"}
-                                </motion.p>
-                            </AnimatePresence>
+                                    {word}
+                                </motion.span>
+                            )) : (
+                                <motion.span
+                                    className="text-sm tracking-[0.2em] uppercase font-medium text-white"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                >
+                                    Ready
+                                </motion.span>
+                            )}
                         </motion.div>
                     </motion.div>
 
