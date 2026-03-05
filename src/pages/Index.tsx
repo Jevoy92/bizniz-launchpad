@@ -193,7 +193,7 @@ const Index = () => {
         >
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
             {/* Left */}
-            <motion.div variants={stagger} initial="hidden" animate="visible" className="relative z-10">
+            <motion.div variants={stagger} initial="hidden" animate={!loading ? "visible" : "hidden"} className="relative z-10">
               <motion.h1
                 variants={fadeUp}
                 custom={0}
@@ -201,32 +201,77 @@ const Index = () => {
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Turn Ideas Into{" "}
-                <span className="brand-underline">Episodes</span>, Dreams Into Reality
+                <span className="relative inline-block">
+                  Episodes
+                  <motion.svg
+                    className="absolute -bottom-2 left-0 w-full"
+                    viewBox="0 0 200 12"
+                    fill="none"
+                    preserveAspectRatio="none"
+                    style={{ height: "10px" }}
+                  >
+                    <motion.path
+                      d="M2 8 C40 2, 60 12, 100 6 S160 2, 198 8"
+                      stroke="var(--brand-orange)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={!loading ? { pathLength: 1, opacity: 1 } : {}}
+                      transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                    />
+                  </motion.svg>
+                </span>
+                , Dreams Into Reality
               </motion.h1>
-              <motion.p variants={fadeUp} custom={1} className="mt-5 text-base md:text-lg" style={{ color: "var(--brand-text-gray)" }}>
+              <motion.p
+                variants={fadeUp}
+                custom={1}
+                className="mt-5 text-base md:text-lg"
+                style={{ color: "var(--brand-text-gray)" }}
+              >
                 Real conversations about entrepreneurship, creativity, and what it takes to build something from nothing. Hosted by Jevoy Palmer.
               </motion.p>
               {/* As Seen On Badge */}
-              <motion.div variants={fadeUp} custom={1.5} className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}>
+              <motion.div
+                variants={fadeUp}
+                custom={1.5}
+                className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium"
+                style={{ background: "rgba(212,132,90,0.15)", color: "var(--brand-orange)", border: "1px solid rgba(212,132,90,0.3)" }}
+              >
                 🎬 Coming Soon: Cast on Daymond John&apos;s Next Level CEO — Inside Success TV
               </motion.div>
               <motion.div variants={fadeUp} custom={2} className="mt-8 flex flex-wrap gap-4">
-                <a href="#episode" className="brand-btn-primary">
+                <motion.a
+                  href="#episode"
+                  className="brand-btn-primary"
+                  whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(212,132,90,0.4)" }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
                   Start Listening <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
-                </a>
-                <a href="#episode" className="brand-btn-outline">
+                </motion.a>
+                <motion.a
+                  href="#episode"
+                  className="brand-btn-outline"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
                   Browse Episodes <span className="brand-icon-circle w-7 h-7"><ArrowUpRight size={16} /></span>
-                </a>
+                </motion.a>
               </motion.div>
               <motion.div variants={fadeUp} custom={3} className="mt-8 flex items-center gap-3">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
-                    <div
+                    <motion.div
                       key={i}
                       className="w-10 h-10 rounded-full border-2 border-[var(--brand-dark)] overflow-hidden"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={!loading ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
                     >
                       <img src={`/episode-${i}.png`} alt="" className="w-full h-full object-cover" />
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 <div>
@@ -238,23 +283,24 @@ const Index = () => {
 
             {/* Right – Hero image */}
             <motion.div
-              variants={fadeUp}
-              custom={1}
-              initial="hidden"
-              animate="visible"
+              initial={{ opacity: 0, scale: 0.9, x: 40 }}
+              animate={!loading ? { opacity: 1, scale: 1, x: 0 } : {}}
+              transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative flex justify-center"
             >
               <div className="relative">
-                <img
+                <motion.img
                   src="/hero-person.png"
                   alt="Podcast listener"
                   className="w-full max-w-md rounded-3xl object-cover"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
                 {/* Floating player card */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
+                  initial={{ opacity: 0, y: 30, x: -20 }}
+                  animate={!loading ? { opacity: 1, y: 0, x: 0 } : {}}
+                  transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute bottom-8 left-0 md:-left-8 bg-white rounded-2xl shadow-xl p-3 flex items-center gap-3 min-w-[260px]"
                 >
                   <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
@@ -266,7 +312,13 @@ const Index = () => {
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs" style={{ color: "var(--brand-text-gray)" }}>2:46</span>
                       <div className="flex-1 h-1 bg-gray-200 rounded-full">
-                        <div className="h-full w-2/3 rounded-full" style={{ background: "var(--brand-orange)" }} />
+                        <motion.div
+                          className="h-full rounded-full"
+                          style={{ background: "var(--brand-orange)" }}
+                          initial={{ width: "0%" }}
+                          animate={!loading ? { width: "66%" } : {}}
+                          transition={{ delay: 1.4, duration: 1.2, ease: "easeOut" }}
+                        />
                       </div>
                       <span className="text-xs" style={{ color: "var(--brand-text-gray)" }}>-1:22</span>
                     </div>
@@ -275,9 +327,9 @@ const Index = () => {
 
                 {/* Episode count badge */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1, duration: 0.4 }}
+                  initial={{ opacity: 0, scale: 0.6, rotate: -10 }}
+                  animate={!loading ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                  transition={{ delay: 1.2, duration: 0.5, type: "spring", stiffness: 200 }}
                   className="absolute top-8 right-0 md:-right-4 bg-white rounded-2xl shadow-xl p-3 flex items-center gap-3"
                 >
                   <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(212,132,90,0.15)" }}>
@@ -290,9 +342,18 @@ const Index = () => {
                 </motion.div>
 
                 {/* Decorative doodle */}
-                <svg className="absolute -top-8 left-1/3 w-10 h-10 text-white/60" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2">
+                <motion.svg
+                  className="absolute -top-8 left-1/3 w-10 h-10 text-white/60"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={!loading ? { opacity: 1, rotate: 0 } : {}}
+                  transition={{ delay: 1.5, duration: 0.6 }}
+                >
                   <path d="M10 30 Q20 10 30 30" /><path d="M15 28 Q22 12 28 28" />
-                </svg>
+                </motion.svg>
               </div>
             </motion.div>
           </div>
