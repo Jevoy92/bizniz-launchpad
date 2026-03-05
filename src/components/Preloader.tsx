@@ -94,7 +94,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                             }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                         >
-                            <img src="/logo-white.png" alt="Logo" className="w-14 h-14 object-contain" />
+                            <img src="/logo-orange.png" alt="Logo" className="w-14 h-14 object-contain" />
                         </motion.div>
                     </motion.div>
 

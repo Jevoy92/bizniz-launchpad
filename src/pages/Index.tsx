@@ -195,7 +195,7 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
             <a href="#" className="flex items-center gap-2 group">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-white/10 group-hover:scale-110">
-                <img src="/logo-white.png" alt="Logo" className="w-7 h-7 object-contain" />
+                <img src="/logo-orange.png" alt="Logo" className="w-7 h-7 object-contain" />
               </div>
               <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
             </a>
@@ -1014,7 +1014,7 @@ const Index = () => {
               <div className="col-span-2 md:col-span-1">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/10">
-                    <img src="/logo-white.png" alt="Logo" className="w-7 h-7 object-contain" />
+                    <img src="/logo-orange.png" alt="Logo" className="w-7 h-7 object-contain" />
                   </div>
                   <span className="text-white font-bold text-xl" style={{ fontFamily: "var(--font-heading)" }}>Mind Your Bizniz</span>
                 </div>
