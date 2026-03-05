@@ -66,11 +66,8 @@ const FEATURES = [
   { icon: Volume2, title: "Full Production Support", desc: "From filming to editing to final export — we offer tiered production packages so you can focus on your message." },
 ];
 
-const TESTIMONIALS = [
-  { text: "Jevoy brings an energy and authenticity to every conversation. Mind Your Bizniz is the podcast I didn't know I needed.", name: "Early Listener", role: "Entrepreneur" },
-  { text: "The production quality is insane for a new podcast. You can tell there's real craft behind every episode.", name: "Community Member", role: "Creative Professional" },
-  { text: "Real talk, real stories, real growth. This is the kind of content the world needs more of.", name: "Supporter", role: "Business Owner" },
-];
+
+
 
 const HOSTS = [
   { name: "Jevoy Palmer", role: "Host, Creative Strategist & Next Level CEO Cast", img: "/jevoy-portrait.jpg" },
@@ -85,7 +82,6 @@ const PRICING = [
 /* ─── COMPONENT ───────────────────────── */
 
 const Index = () => {
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -507,54 +503,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ───── TESTIMONIALS ───── */}
-        <section className="py-20 md:py-28" style={{ background: "var(--brand-surface-alt)" }}>
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.h2 variants={fadeUp} custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-3xl md:text-4xl font-bold text-center brand-section-heading" style={{ color: "var(--brand-text-primary)" }}>
-              Stories from Our Awesome Listeners
-            </motion.h2>
-            <motion.p variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-3 text-center text-base" style={{ color: "var(--brand-text-secondary)" }}>
-              Our listeners share how they've connected with our stories and found value in every episode.
-            </motion.p>
-
-            <motion.div variants={fadeUp} custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-14 max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
-                <div className="brand-testimonial-card">
-                  <p className="text-lg leading-relaxed" style={{ color: "var(--brand-text-primary)" }}>
-                    {TESTIMONIALS[testimonialIdx].text}
-                  </p>
-                  <div className="mt-6">
-                    <p className="font-bold" style={{ color: "var(--brand-text-primary)", fontFamily: "var(--font-heading)" }}>
-                      {TESTIMONIALS[testimonialIdx].name}
-                    </p>
-                    <p className="text-sm" style={{ color: "var(--brand-text-secondary)" }}>
-                      {TESTIMONIALS[testimonialIdx].role}
-                    </p>
-                  </div>
-                </div>
-                <div className="hidden md:block w-48 h-64 rounded-2xl overflow-hidden shadow-xl">
-                  <img src="/episode-4.png" alt="Testimonial" className="w-full h-full object-cover" />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <button
-                  onClick={() => setTestimonialIdx((testimonialIdx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-                  className="brand-icon-circle-outline"
-                >
-                  <ArrowLeft size={18} />
-                </button>
-                <button
-                  onClick={() => setTestimonialIdx((testimonialIdx + 1) % TESTIMONIALS.length)}
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white"
-                  style={{ background: "var(--brand-orange)" }}
-                >
-                  <ArrowRight size={18} />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Testimonials section removed — no public reviews yet */}
 
         {/* ───── HOSTS ───── */}
         <section id="host" className="py-20 md:py-28" style={{ background: "var(--brand-surface-accent)" }}>
