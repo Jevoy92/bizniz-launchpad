@@ -21,7 +21,9 @@ import {
   Youtube,
   Globe,
 } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+
+const HONEYBOOK_PID = "64f18afafb99b50197686f91";
 import Preloader from "@/components/Preloader";
 
 const fadeUp = {
@@ -83,6 +85,19 @@ const PRICING = [
 const Index = () => {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!(window as any)._HB_) (window as any)._HB_ = {};
+    (window as any)._HB_.pid = HONEYBOOK_PID;
+    const existing = document.querySelector(`script[src*="honeybook.com"]`);
+    if (!existing) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      script.src = "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js";
+      document.body.appendChild(script);
+    }
+  }, []);
 
   const handlePreloaderComplete = useCallback(() => setLoading(false), []);
 
@@ -636,14 +651,9 @@ const Index = () => {
                 <motion.p variants={fadeUp} custom={1} className="mt-4 text-base leading-relaxed" style={{ color: "var(--brand-text-secondary)" }}>
                   Get updates on new episodes, behind-the-scenes content, and exclusive insights delivered straight to your inbox.
                 </motion.p>
-                <motion.div variants={fadeUp} custom={2} className="mt-8 flex gap-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-5 py-3 rounded-full text-sm border focus:outline-none focus:border-[var(--brand-orange)] transition"
-                    style={{ borderColor: "var(--brand-border)", background: "var(--brand-surface-input)", color: "var(--brand-text-primary)" }}
-                  />
-                  <button className="brand-btn-primary px-6">Join</button>
+                <motion.div variants={fadeUp} custom={2} className="mt-8">
+                  <div className="hb-p-64f18afafb99b50197686f91-3"></div>
+                  <img height="1" width="1" style={{ display: "none" }} src="https://www.honeybook.com/p.png?pid=64f18afafb99b50197686f91" alt="" />
                 </motion.div>
               </motion.div>
 
